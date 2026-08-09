@@ -1,0 +1,11 @@
+{
+  "name": "jiayi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "scan": "node scripts/generate-manifest.js",
+    "scan:merge": "node scripts/generate-manifest.js --merge"
+  }
+}

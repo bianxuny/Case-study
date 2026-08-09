@@ -1,0 +1,128 @@
+/* IBM Carbon typography — extracted from ibm.com/quantum hardware CSS */
+
+.text-fluid-display-01 {
+  letter-spacing: 0;
+  font-size: 2.625rem;
+  font-weight: 300;
+  line-height: 1.19;
+  color: var(--cds-text-primary);
+}
+
+.text-gradient-blue {
+  background-image: var(--cds-gradient-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-fluid-heading-05 {
+  letter-spacing: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cds-text-primary);
+}
+
+.text-heading-03 {
+  letter-spacing: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--cds-text-primary);
+}
+
+.text-heading-04 {
+  letter-spacing: 0;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.28572;
+  color: var(--cds-text-primary);
+}
+
+.text-heading-05 {
+  letter-spacing: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cds-text-primary);
+}
+
+.text-heading-06 {
+  letter-spacing: 0;
+  font-size: 2.625rem;
+  font-weight: 300;
+  line-height: 1.199;
+  color: var(--cds-text-primary);
+}
+
+.text-body-02 {
+  letter-spacing: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-body-compact-01 {
+  letter-spacing: 0.16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.28572;
+}
+
+.text-label-01 {
+  letter-spacing: 0.32px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33333;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33333;
+  letter-spacing: 0.32px;
+  color: var(--cds-text-secondary);
+}
+
+.text-text-primary { color: var(--cds-text-primary); }
+.text-text-secondary { color: var(--cds-text-secondary); }
+.text-text-helper { color: var(--cds-text-helper); }
+
+@media (min-width: 42rem) {
+  .text-fluid-display-01 { font-size: 2.625rem; }
+  .text-fluid-heading-05 {
+    font-size: 2.25rem;
+    font-weight: 300;
+    line-height: 1.22;
+  }
+}
+
+@media (min-width: 66rem) {
+  .text-fluid-display-01 { font-size: 3.375rem; }
+  .text-fluid-heading-05 {
+    font-size: 2.625rem;
+    line-height: 1.19;
+  }
+}
+
+@media (min-width: 82rem) {
+  .text-fluid-display-01 {
+    font-size: 3.75rem;
+    line-height: 1.17;
+  }
+  .text-fluid-heading-05 {
+    font-size: 3rem;
+    line-height: 1.17;
+  }
+}
+
+@media (min-width: 99rem) {
+  .text-fluid-display-01 {
+    font-size: 4.75rem;
+    line-height: 1.13;
+  }
+  .text-fluid-heading-05 {
+    font-size: 3.75rem;
+  }
+}

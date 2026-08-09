@@ -1,0 +1,822 @@
+{
+  "meta": {
+    "name": "Jiayi's Case Study",
+    "role": "Product Designer · Rapid Prototyper",
+    "tagline": {
+      "zh": "医疗与工业系统，从 Demo 到交付",
+      "en": "Healthcare & industrial systems, from demo to delivery"
+    },
+    "taglineAccent": {
+      "zh": "从 Demo 到交付",
+      "en": "from demo to delivery"
+    },
+    "description": {
+      "zh": "UAL 创意计算机硕士。专注医疗 MVP、工业 B 端与实验室自动化——Design System、数据管道与高保真原型，符合规范、可落地。",
+      "en": "MA Creative Computing, UAL. Healthcare MVP, industrial B2B, and lab automation—design systems, data pipelines, and high-fidelity prototypes built to spec."
+    }
+  },
+  "contact": {
+    "email": "",
+    "linkedin": "",
+    "resume": "",
+    "openToWork": {
+      "zh": "开放 Product / UX 机会 · 2026",
+      "en": "Open to Product / UX roles · 2026"
+    }
+  },
+  "featuredProjects": ["xtalpi-glovebox", "siemens-siepa"],
+  "heroCarousel": {
+    "autoplay": true,
+    "interval": 5000,
+    "slides": [
+      { "blank": true },
+      {
+        "src": "assets/images/hero-slide-1.jpg",
+        "alt": { "zh": "作品展示 1", "en": "Work showcase 1" }
+      },
+      {
+        "src": "assets/images/hero-slide-1.5.jpg",
+        "alt": { "zh": "作品展示 1.5", "en": "Work showcase 1.5" }
+      },
+      {
+        "src": "assets/images/hero-slide-2.jpg",
+        "alt": { "zh": "作品展示 2", "en": "Work showcase 2" }
+      },
+      {
+        "src": "assets/images/hero-slide-3.jpg",
+        "alt": { "zh": "作品展示 3", "en": "Work showcase 3" }
+      },
+      {
+        "src": "assets/images/hero-slide-4.jpg",
+        "alt": { "zh": "作品展示 4", "en": "Work showcase 4" }
+      },
+      {
+        "type": "video",
+        "src": "assets/images/hero-slide-5.mp4",
+        "alt": { "zh": "作品展示 5", "en": "Work showcase 5" }
+      },
+      {
+        "type": "video",
+        "src": "assets/images/hero-slide-6.mp4",
+        "alt": { "zh": "作品展示 6", "en": "Work showcase 6" }
+      },
+      {
+        "src": "assets/images/hero-slide-7.jpg",
+        "alt": { "zh": "作品展示 7", "en": "Work showcase 7" }
+      },
+      {
+        "src": "assets/images/hero-slide-8.jpg",
+        "alt": { "zh": "作品展示 8", "en": "Work showcase 8" }
+      },
+      {
+        "src": "assets/images/hero-slide-9.png",
+        "alt": { "zh": "作品展示 9", "en": "Work showcase 9" }
+      }
+    ]
+  },
+  "timeline": {
+    "label": { "zh": "经历", "en": "Experience" },
+    "items": [
+      {
+        "kind": "work",
+        "start": "2025-12",
+        "end": "present",
+        "icon": "🧪",
+        "org": { "zh": "晶泰科技（实验室自动化）", "en": "XtalPi (Lab Automation)" },
+        "title": { "zh": "软件产品经理", "en": "Software Product Manager" },
+        "url": "https://www.xtalpi.com/"
+      },
+      {
+        "kind": "work",
+        "start": "2025-07",
+        "end": "2025-12",
+        "icon": "🏭",
+        "org": { "zh": "西门子（数字化工业）", "en": "Siemens Digital Industries" },
+        "title": { "zh": "用户体验设计实习", "en": "UX Design Intern" },
+        "url": "https://www.siemens.com/cn/zh/company/about/businesses/digital-industries.html"
+      },
+      {
+        "kind": "education",
+        "start": "2024",
+        "end": "2026",
+        "org": { "zh": "伦敦艺术大学", "en": "University of the Arts London" },
+        "title": { "zh": "创意计算机 硕士", "en": "MA Creative Computing" },
+        "url": "https://www.arts.ac.uk/"
+      },
+      {
+        "kind": "education",
+        "start": "2019",
+        "end": "2023",
+        "org": { "zh": "上海视觉艺术学院", "en": "Shanghai Institute of Visual Arts" },
+        "title": { "zh": "产品设计 本科", "en": "BA Product Design" },
+        "url": "https://www.siva.edu.cn/"
+      },
+      {
+        "kind": "work",
+        "start": "2022-12",
+        "end": "2023-08",
+        "icon": "🩻",
+        "org": { "zh": "西门子医疗", "en": "Siemens Healthineers" },
+        "title": { "zh": "产品设计实习", "en": "Product Design Intern" },
+        "url": "https://www.siemens-healthineers.cn/shanghai-innovation-center"
+      },
+      {
+        "kind": "work",
+        "start": "2022-06",
+        "end": "2022-10",
+        "icon": "🚙",
+        "org": { "zh": "奇瑞捷豹路虎", "en": "Chery Jaguar Land Rover" },
+        "title": { "zh": "智能驾驶座舱实习", "en": "Intelligent Cockpit Intern" },
+        "url": "https://www.cheryjaguarlandrover.com/"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "label": { "zh": "设计实践", "en": "Experience" },
+      "value": "3",
+      "suffix": { "zh": "年", "en": " yr" },
+      "footnote": { "zh": "2023 — 2026", "en": "2023 — 2026" }
+    },
+    {
+      "label": { "zh": "Case Study", "en": "Case studies" },
+      "value": "9",
+      "suffix": { "zh": "", "en": "" },
+      "footnote": { "zh": "医疗 · 工业 · Demo", "en": "Medical · Industrial · Demo" }
+    },
+    {
+      "label": { "zh": "核心场景", "en": "Core domains" },
+      "value": "3",
+      "suffix": { "zh": "类", "en": "" },
+      "footnote": { "zh": "医疗 MVP · 数据管道 · 原型验证", "en": "Medical MVP · Data · Prototyping" }
+    },
+    {
+      "label": { "zh": "教育", "en": "Education" },
+      "value": "MA",
+      "suffix": { "zh": "", "en": "" },
+      "footnote": { "zh": "UAL CCI · SIVA 产品设计", "en": "UAL CCI · SIVA Product Design" }
+    }
+  ],
+  "highlights": [
+    {
+      "index": "01",
+      "title": { "zh": "Demo · 快速验证", "en": "Demo · Rapid validation" },
+      "text": {
+        "zh": "Cursor / Vibe Coding / Figma——先把想法做成可验证数据的 Demo，再推动迭代。",
+        "en": "Cursor, Vibe Coding, Figma—turn ideas into data-verifiable demos first, then drive iteration."
+      }
+    },
+    {
+      "index": "02",
+      "title": { "zh": "医疗 · 规范落地", "en": "Medical · Spec-ready delivery" },
+      "text": {
+        "zh": "DR 长骨拼接 MVP、临床路径装置——懂医疗流程、人因与 DFE，从 PRD 到可演示原型。",
+        "en": "DR long-leg MVP and clinical pathway devices—healthcare workflows, DFE, PRD to demo-ready prototypes."
+      }
+    },
+    {
+      "index": "03",
+      "title": { "zh": "工业 · 数据管道", "en": "Industrial · Data pipelines" },
+      "text": {
+        "zh": "SiePA 预测维护、晶泰手套箱与化合物管理——组件规范、大屏/移动端、数据可视化。",
+        "en": "SiePA predictive maintenance, XtalPi glove box—design systems, dashboards, mobile, and data viz end-to-end."
+      }
+    },
+    {
+      "index": "04",
+      "title": { "zh": "Design System", "en": "Design System" },
+      "text": {
+        "zh": "西门子工业视觉规范、3D 设备标准、2.5D 模块化设备、Copilot IP——复杂系统的一致性。",
+        "en": "Siemens industrial visual specs, 3D device standards, 2.5D modular equipment, Copilot IP—consistency across complex systems."
+      }
+    }
+  ],
+  "skillPipeline": {
+    "layout": "hourglass",
+    "title": { "zh": "我的用户旅程", "en": "My Journey" },
+    "subtitle": {
+      "zh": "我想用这个沙漏结构表达——以 AI 工具实践与探索的多元输入；腰部以经验与沉淀充当门控，压缩噪声、提炼判断；下方将知识释放为业务场景的落地应用与快速迭代，并持续回流。",
+      "en": "I use this hourglass to express my path—diverse input from AI tool practice and exploration; a waist of experience and accumulated judgment that filters noise and refines decisions; below, knowledge released into real business scenarios, rapid iteration, and continuous feedback upstream."
+    },
+    "zones": [
+      {
+        "id": "input",
+        "label": { "zh": "探索与实践", "en": "Explore & practice" },
+        "groups": [
+          {
+            "id": "capabilities",
+            "label": { "zh": "能力架构", "en": "Capability stack" },
+            "groupTitle": { "zh": "约束之间，找路径", "en": "Paths amid constraints" },
+            "nodes": [
+              { "label": { "zh": "医疗 · 工业 · 实验室语境", "en": "Healthcare · Industrial · Lab" } },
+              { "label": { "zh": "复杂系统的清晰化", "en": "Clarity in complex systems" } },
+              { "label": { "zh": "图形化与数据管道", "en": "Graphics & data pipelines" } },
+              { "label": { "zh": "人因与规范落地", "en": "HFI & spec-ready delivery" } }
+            ]
+          },
+          {
+            "id": "tools",
+            "label": { "zh": "实践工具", "en": "Tools in hand" },
+            "groupTitle": { "zh": "所想快速还原", "en": "Ideas, quickly made real" },
+            "nodes": [
+              { "label": { "zh": "界面与原型 · Figma", "en": "UI & prototypes · Figma" } },
+              { "label": { "zh": "轻量前端栈 · Cursor · Skills", "en": "Lightweight front-end · Cursor · Skills" } },
+              { "label": { "zh": "Rhino · 3D 打印", "en": "Rhino · 3D printing" } },
+              { "label": { "zh": "图形引擎 · SVG · Sim2Real", "en": "Graphics engine · SVG · Sim2Real" } }
+            ]
+          },
+          {
+            "id": "ai-workflow",
+            "label": { "zh": "AI 探索", "en": "AI exploration" },
+            "groupTitle": { "zh": "搜索 · 实践 · 应用", "en": "Search · Practice · Apply" },
+            "nodes": [
+              { "label": { "zh": "Vibe Coding 工作流", "en": "Vibe Coding workflow" } },
+              { "label": { "zh": "AI Co-work", "en": "AI Co-work" } },
+              { "label": { "zh": "想法 → 可验证 Demo", "en": "Ideas → verifiable demos" } },
+              { "label": { "zh": "AI 辅助创作", "en": "AI-assisted creation" } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gate",
+        "label": { "zh": "门控 · 沉淀", "en": "Gate · Distilled" },
+        "groupTitle": { "zh": "过滤器", "en": "Filter" },
+        "nodes": [
+          { "label": { "zh": "场景直觉与约束判断", "en": "Scene intuition & constraint judgment" } },
+          { "label": { "zh": "规范与设计标准内化", "en": "Internalized specs & design standards" } },
+          { "label": { "zh": "可复用模块沉淀", "en": "Reusable module accumulation" } },
+          { "label": { "zh": "数据管道建模思维", "en": "Data-pipeline modeling mindset" } }
+        ]
+      },
+      {
+        "id": "output",
+        "label": { "zh": "落地与迭代", "en": "Land & iterate" },
+        "groups": [
+          {
+            "id": "delivery",
+            "theme": "purple",
+            "label": { "zh": "业务落地", "en": "Business delivery" },
+            "groupTitle": { "zh": "场景串联，闭环交付", "en": "Connect scenes · Close the loop" },
+            "nodes": [
+              { "label": { "zh": "业务诉求对齐", "en": "Align with business needs" } },
+              { "label": { "zh": "体验与数据协同", "en": "Experience & data in sync" } },
+              { "label": { "zh": "Demo 推进至可交付", "en": "Demo to deliverable" } },
+              { "label": { "zh": "快速迭代验证", "en": "Rapid iteration & validation" } }
+            ]
+          },
+          {
+            "id": "future",
+            "theme": "purple",
+            "label": { "zh": "持续探索", "en": "What's next" },
+            "groupTitle": { "zh": "数据先行，千变万化", "en": "Data first, ever-changing" },
+            "nodes": [
+              { "label": { "zh": "自动化实验", "en": "Automated experiments" } },
+              { "label": { "zh": "穿戴式交互产品", "en": "Wearable interactive products" } },
+              { "label": { "zh": "无障碍 · 多模态交互", "en": "Accessibility · Multimodal interaction" } },
+              { "label": { "zh": "机械臂与具身应用", "en": "Robotic arms & embodied AI" } }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "instagram": "https://www.instagram.com/jiayi_111111?igsh=MTZ1Zjc4OXRhNWptZA%3D%3D&utm_source=qr",
+    "sidebarImage": "assets/images/about.png",
+    "sidebarImageAlt": { "zh": "钱加义", "en": "Jiayi Qian" },
+    "sidebarSummary": {
+      "zh": "产品经理与产品设计师，聚焦医疗、工业 B 端与实验室自动化。UAL 创意计算机硕士。从 SiePA 大屏到医疗 MVP、化合物数据管道——复杂系统，清晰可交付。",
+      "en": "Product manager and designer across healthcare, industrial B2B, and lab automation. MA Creative Computing at UAL. From SiePA dashboards to medical MVPs and compound data pipelines—complex systems made clear and shippable."
+    },
+    "bio": {
+      "zh": "不想被 PM、UX、UI、工业设计等标签框住。我更关注基于数据管道的建模与场景应用——在 AI 时代快速迭代，把经验沉淀为可复用的能力，并持续推进到可交付、可落地的结果。通过设计与创新，去解决或平衡复杂场景——在多重约束与诉求之间，寻找到可推进的路径与目标。",
+      "en": "I don't want to be boxed in by PM, UX, UI, or industrial design labels. I'm more focused on data-pipeline modeling and scenario application—iterating quickly in the AI era, turning experience into reusable capabilities, and pushing work through to deliverable, production-ready outcomes. Through design and innovation, I address or balance complex scenarios—finding actionable paths and goals amid multiple constraints and competing needs."
+    },
+    "education": {
+      "zh": [
+        "伦敦艺术大学 · 创意计算机 MA（2024 — 2025）",
+        "上海视觉艺术学院 · 产品设计 BA（2019 — 2023）"
+      ],
+      "en": [
+        "University of the Arts London · MA Creative Computing (2024 — 2025)",
+        "Shanghai Institute of Visual Arts · BA Product Design (2019 — 2023)"
+      ]
+    },
+    "focus": {
+      "zh": ["医疗 & 实验室 DFE", "B 端 Dashboard / 移动端", "化合物数据管道", "MVP · PRD · Design System"],
+      "en": ["Healthcare & lab DFE", "B2B dashboard / mobile", "Compound data pipelines", "MVP · PRD · Design System"]
+    }
+  },
+  "sections": [
+    {
+      "id": "medical",
+      "title": { "zh": "医疗 · MVP 原型", "en": "Medical · MVP prototypes" },
+      "subtitle": {
+        "zh": "实验室自动化 · 放射 · 临床路径 · 从 0 到 1 可演示交付",
+        "en": "Lab automation · Radiology · Clinical pathways · Demo-ready from zero to one"
+      }
+    },
+    {
+      "id": "industrial",
+      "title": { "zh": "工业 · 系统与数据", "en": "Industrial · Systems & data" },
+      "subtitle": {
+        "zh": "SiePA · 组件规范与走查",
+        "en": "SiePA · Components & design reviews"
+      }
+    },
+    {
+      "id": "demo",
+      "title": { "zh": "Demo · 研究验证", "en": "Demo · Research validation" },
+      "subtitle": {
+        "zh": "交互原型与技术 Demo，验证想法可行性",
+        "en": "Interactive prototypes and technical demos to validate ideas"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "xtalpi-glovebox",
+      "section": "medical",
+      "featured": true,
+      "cover": "assets/images/xtalpi-glovebox.jpg",
+      "images": [
+        "assets/images/xtalpi-glovebox.jpg",
+        "assets/images/xtalpi-glovebox-2.jpg",
+        "assets/images/xtalpi-glovebox-3.jpg"
+      ],
+      "title": { "zh": "Glove Box · 化合物筛选", "en": "Glove Box · Compound screening" },
+      "summary": {
+        "zh": "化合物条件筛选与手套箱操控界面，串联从 Agent 下发实验设计到自动化实验全流程。",
+        "en": "Compound condition screening and glove box control UI—from Agent-driven experiment design through automated experiment execution."
+      },
+      "description": {
+        "zh": "化合物条件筛选。Agent 基于分子知识库筛选推荐 + 自主实验设计工具 + 图形化手套箱与机械臂操控界面，串联实验全流程并与自动化设备联动，支持礼来制药完成千万级项目工厂验收。",
+        "en": "Compound condition screening. Agent-driven screening and recommendations from a molecular knowledge base, plus autonomous experiment design tools and graphical glove box & robotic arm control UI—connecting the full experimental workflow with lab automation, supporting Eli Lilly factory acceptance on a ~$10M program."
+      },
+      "caseStudy": {
+        "role": {
+          "zh": "软件产品经理 · 交互设计负责人",
+          "en": "Software PM · Interaction design lead"
+        },
+        "timeline": {
+          "zh": "2025.12 — 至今",
+          "en": "Dec 2025 — Present"
+        },
+        "team": {
+          "zh": "控制 · 调度 · 机械 · 前端工程师",
+          "en": "Controls · Scheduling · Mechanical · Frontend engineers"
+        },
+        "problem": {
+          "zh": "自主实验室场景下，化合物筛选涉及 Agent 推荐、实验设计、手套箱操控与自动化设备联动——多方约束叠加，需要在合规与安全边界内，让一线人员快速理解并执行复杂流程。",
+          "en": "In autonomous lab compound screening, Agent recommendations, experiment design, glove box control, and automation must work together—many constraints at once, with operators needing to understand and execute complex flows safely and compliantly."
+        },
+        "approach": {
+          "zh": "以「推荐—设计—执行—分析—优化—报告」全流程为主线，用 step 引导与 2.5D 图形化降低认知负荷；建立资源树与状态机规范，把物理设备与软件逻辑对齐，并在安全、维护、耗材等模块划定清晰边界。",
+          "en": "Structured the full loop—recommend → design → execute → analyze → optimize → report—with step guidance and 2.5D graphics to reduce cognitive load; aligned physical devices to software via resource trees and state-machine specs, with clear boundaries for safety, maintenance, and consumables."
+        },
+        "impact": [
+          {
+            "zh": "支撑礼来制药千万级项目工厂验收",
+            "en": "Supported Eli Lilly factory acceptance on a ~$10M program"
+          },
+          {
+            "zh": "串联 Agent 实验设计到手套箱自动化执行的完整闭环",
+            "en": "Closed the loop from Agent experiment design to glove box automation"
+          },
+          {
+            "zh": "沉淀 2.5D 图形引擎、资源树与状态机等可复用模块",
+            "en": "Distilled reusable 2.5D engine, resource tree, and state-machine modules"
+          }
+        ]
+      },
+      "highlights": [
+        {
+          "title": { "zh": "全流程闭环", "en": "End-to-end lab loop" },
+          "text": {
+            "zh": "串联「推荐—设计—执行—分析—多轮优化—报告」全流程，与手套箱自动化联动，形成自主实验室闭环。",
+            "en": "Connected recommend → design → execute → analyze → multi-round optimization → report, integrated with glove box automation for an autonomous lab closed loop."
+          }
+        },
+        {
+          "media": {
+            "type": "video",
+            "src": "assets/images/xtalpi-glovebox-4.mp4"
+          },
+          "title": { "zh": "创新体验升级", "en": "Innovative experience upgrade" },
+          "text": {
+            "zh": "复杂场景下通过 step 步骤引导用户执行，创建 AI 生成辅助 GIF 插图引导用户打包出料等人工操作。",
+            "en": "In complex scenarios, guide users through step-by-step flows—AI-generated GIF illustrations support manual operations such as packaging and material discharge."
+          }
+        },
+        {
+          "title": { "zh": "Agent · 实验设计", "en": "Agent · Experiment design" },
+          "text": {
+            "zh": "设计并优化实验设计 Agent 会话与谱图生成，提升实验方案迭代效率。",
+            "en": "Designed and optimized experiment-design Agent conversations and spectrum generation to speed up protocol iteration."
+          }
+        },
+        {
+          "media": {
+            "type": "video",
+            "src": "assets/images/xtalpi-glovebox-5.mp4"
+          },
+          "title": { "zh": "2.5D 图形化 · SVG 引擎与资源树", "en": "2.5D graphics · SVG engine & resource tree" },
+          "text": {
+            "zh": "基于 SVG 引擎设计 2.5D 图形化各设备模块，与资源树绑定——支持模块资源详情查看，统一点位 / 槽位 / 托盘 / 试管状态与类型展示，并定义状态机等核心组件样式规范。",
+            "en": "Built 2.5D graphical device modules on an SVG engine, bound to the resource tree—module-level resource inspection with unified point, slot, tray, and tube status/type views, plus state-machine and core component style definitions."
+          }
+        },
+        {
+          "media": {
+            "type": "image",
+            "src": "assets/images/xtalpi-glovebox-6.jpg"
+          },
+          "title": { "zh": "安全与合规设计", "en": "Safety & compliance" },
+          "text": {
+            "zh": "建立配色系统；设计出入库流程弹窗与分步引导，划定安全边界——覆盖急停恢复等异常处理、维护模式管理，以及损耗部件统计与更换倒计时。",
+            "en": "Defined a color system plus inbound/outbound modals with step-by-step guidance; set safety boundaries—e-stop recovery and exception flows, maintenance mode management, and wear-part tracking with replacement countdowns."
+          }
+        },
+        {
+          "title": { "zh": "耗材与状态监测", "en": "Consumables & status monitoring" },
+          "text": {
+            "zh": "垃圾桶、Tip 头、稀释剂等耗材与设备状态实时监测；接入内仓摄像头画面，以百分比等方式呈现余量，帮助一线人员快速掌握设备健康度。",
+            "en": "Real-time monitoring for consumables (waste bin, tip heads, diluent) and device health—internal camera feeds and percentage-level displays so operators grasp equipment status at a glance."
+          }
+        },
+        {
+          "title": { "zh": "跨职能协同 · 初代落地", "en": "Cross-functional · v1 rollout" },
+          "text": {
+            "zh": "深度配合控制、调度、机械与前端工程师，参与初代软硬件产品规划与设计，从概念到可部署方案一并推进，最终实现工厂落地。",
+            "en": "Partnered closely with controls, scheduling, mechanical, and frontend engineers on v1 hardware–software planning and design—from concept through deployable specs to on-site factory rollout."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["实验室", "Agent", "2.5D", "数据管道", "礼来制药", "B端"],
+        "en": ["Lab", "Agent", "Data pipeline", "Eli Lilly", "B2B"]
+      }
+    },
+    {
+      "id": "xtalpi-neo-dispenser",
+      "section": "medical",
+      "cover": "assets/images/neo-dispenser-0.jpg",
+      "src": "assets/images/neo-dispenser-0.jpg",
+      "title": { "zh": "Neo Dispenser · 灵动勺", "en": "Neo Dispenser · Smart Spoon" },
+      "summary": {
+        "zh": "负责加粉、加液实验设计与图形化软件操控台面设计，并组织设计评审和开发上线支持。",
+        "en": "Owned powder and liquid dispensing experiment design and graphical software control UI—and led design reviews plus development launch support."
+      },
+      "description": {
+        "zh": "Neo Dispenser 作为标准品上市：解决药企毫克级粉末分装问题。作为主要软件产品经理，负责加粉、加液实验设计与操控界面。串联「上料入库 → 实验设计 → 预览分析 → 任务执行 → 结果出库」全流程，以表现层、实验设计、校验、执行结果回流四层架构，支持用户 CSV 自定义配置与 Mapview 图形化操控：快捷实验设计，覆盖 PlateMap 资源映射（对应托盘孔板和试管）、资源充足性校验到实时运行监控与结果回传。",
+        "en": "Neo Dispenser launched as a standard product—addressing milligram-scale powder dispensing for pharma labs. As lead software product manager, I owned powder and liquid dispensing experiment design and control UI. End-to-end flow from loading → design → preview → execution → results, built on four layers—presentation, experiment design, validation, and result feedback—supporting user-defined CSV setup and Mapview graphical control for rapid experiment design, PlateMap resource mapping (tray wells and tubes), resource sufficiency checks, live runtime monitoring, and result export."
+      },
+      "highlights": [
+        {
+          "media": [
+            {
+              "type": "video",
+              "src": "assets/images/neo-dispenser-2.mp4"
+            },
+            {
+              "type": "video",
+              "src": "assets/images/neo-dispenser-3.mp4"
+            }
+          ],
+          "title": { "zh": "毫克级加粉标准品", "en": "Milligram-scale standard product" },
+          "text": {
+            "zh": "面向药企毫克级粉末分装场景，覆盖加粉与加液双模式，打通上料入库到结果出库的完整实验链路，将复杂投料流程产品化为可复用标准能力。",
+            "en": "Built for pharma milligram powder dispensing—powder and liquid modes in one product, with a full pipeline from loading to results that turns complex dosing into a reusable, shippable capability."
+          }
+        },
+        {
+          "title": { "zh": "CSV + Mapview 双模设计", "en": "CSV + Mapview dual design" },
+          "text": {
+            "zh": "CSV 支持批量自定义与灵活复用，Mapview 图形化台面降低上手门槛；两种路径兼顾效率与直观性，让实验员能更快完成方案配置与迭代。",
+            "en": "CSV for batch custom setup and reuse; Mapview graphical UI for intuitive, low-friction design—two paths that balance speed and clarity so operators configure and iterate experiments faster."
+          }
+        },
+        {
+          "title": { "zh": "PlateMap 精准映射", "en": "PlateMap precision mapping" },
+          "text": {
+            "zh": "将托盘孔位、试管与加样任务一一对应，支持 1 对 1 / 1 对 N 映射与多实验组管理；物理资源与软件逻辑对齐，减少错配与返工。",
+            "en": "Aligns tray wells, tubes, and dosing tasks with 1:1 and 1:N mapping plus multi-group runs—physical resources matched to software logic to cut mis-mapping and rework."
+          }
+        },
+        {
+          "title": { "zh": "先校验、再执行、可追踪", "en": "Validate first, execute, trace results" },
+          "text": {
+            "zh": "执行前完成资源充足性与规则校验，避免无效上机；运行中 Mapview 实时反馈进度与耗材状态，结束后 Result CSV 回传转移量、损耗与时间戳，全程可审计。",
+            "en": "Pre-run sufficiency and rule checks prevent wasted runs; live Mapview tracks progress and consumables during execution; Result CSV exports amounts, loss, and timestamps for end-to-end traceability."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["标准品", "加粉加液", "PlateMap", "图形化操作界面"],
+        "en": ["Standard product", "Powder & liquid", "PlateMap", "Graphical control UI"]
+      }
+    },
+    {
+      "id": "xtalpi-hivepi",
+      "section": "medical",
+      "confidential": true,
+      "cover": "assets/images/hivepi/cover.png",
+      "images": [
+        "assets/images/hivepi/cover.png",
+        "assets/images/hivepi/hero.png"
+      ],
+      "title": { "zh": "HivePi · 中央物料路由", "en": "HivePi · Central material routing" },
+      "summary": {
+        "zh": "面向实验室的中央物料路由概念系统，探索高密存储与自动化流转。（保密项目，内容有限展示）",
+        "en": "A central material routing concept for labs—exploring high-density storage and automated flow. (Confidential—limited public detail.)"
+      },
+      "description": {
+        "zh": "晶泰科技实验室自动化方向的概念项目。负责产品概念与展示层面的信息梳理，更多细节因保密暂不便公开。",
+        "en": "A concept project in XtalPi lab automation. I contributed to product concept and presentation structure; further details remain confidential."
+      },
+      "tags": {
+        "zh": ["实验室", "Concept"],
+        "en": ["Lab", "Concept"]
+      }
+    },
+    {
+      "id": "xtalpi-autonomous-lab",
+      "section": "medical",
+      "confidential": true,
+      "cover": "assets/images/autonomous-lab/cover.png",
+      "images": [
+        "assets/images/autonomous-lab/cover.png"
+      ],
+      "title": { "zh": "ALO · 自主实验室", "en": "ALO · Autonomous Lab" },
+      "summary": {
+        "zh": "面向自动化实验室的数字引擎——通过 Agent 编排任务输入输出，并以 CLI 自动化执行命令与脚本，集中管理实验下发、调度与管控。",
+        "en": "A digital engine for automated labs—Agent orchestrates task I/O while CLI automates command and script execution, centrally managing experiment dispatch, scheduling, and control."
+      },
+      "description": {
+        "zh": "面向自动化实验室的数字引擎系统。通过工站数据管道接口统一接入各工站，以 Agent 驱动实验任务的输入输出与流程编排；底层依托 CLI 自动化执行命令与脚本，完成调度、管控与结果回传。构成从任务定义到执行闭环的整体数字底座。",
+        "en": "A digital engine for automated labs. Workstation data-pipeline interfaces unify access across stations; Agents drive task I/O and workflow orchestration, while CLI automation executes commands and scripts for scheduling, control, and result feedback—forming the end-to-end digital foundation from task definition to execution."
+      },
+      "tags": {
+        "zh": ["实验室", "Agent", "CLI"],
+        "en": ["Lab", "Agent", "CLI"]
+      }
+    },
+    {
+      "id": "siemens-health-longleg",
+      "section": "medical",
+      "cover": "assets/images/auto-long-leg-collimation-1.png",
+      "images": [
+        "assets/images/auto-long-leg-collimation-1.png",
+        "assets/images/auto-long-leg-collimation-2.png",
+        "assets/images/auto-long-leg-collimation-3.png",
+        "assets/images/auto-long-leg-collimation-4.png",
+        "assets/images/auto-long-leg-collimation-5.png",
+        "assets/images/auto-long-leg-collimation-6.png"
+      ],
+      "title": "Auto Long-leg Collimation",
+      "summary": {
+        "zh": "西门子医疗 DR 长骨拼接架早期预研，主导方案定义、PRD 与临床工作流设计。",
+        "en": "Siemens Healthineers DR long-leg collimation research—solution definition, PRD, and clinical workflow."
+      },
+      "description": {
+        "zh": "西门子医疗 · DR 长骨拼接架早期预研。2022.12—2023.6 作为主要产品设计师，定义方案、撰写 PRD，支撑多轮迭代与供应商汇报；聚焦长骨自动运输与拼接流程的临床工作流与可交付细节。",
+        "en": "Siemens Healthineers · DR long-leg collimation early research. Dec 2022—Jun 2023 as lead product designer—solution definition, PRD, multi-round iteration and vendor reviews; clinical workflow and delivery details for automated long-bone transport and stitching."
+      },
+      "highlights": [
+        {
+          "title": { "zh": "早期预研", "en": "Early research" },
+          "text": {
+            "zh": "2022.12—2023.6 作为早期预研项目的主要产品设计师，从方案定义到 PRD 支撑多轮迭代。",
+            "en": "Dec 2022—Jun 2023: lead product designer on early-stage research—from solution definition and PRD through multi-round iteration."
+          }
+        },
+        {
+          "title": { "zh": "狭小空间移动", "en": "Tight-space mobility" },
+          "text": {
+            "zh": "采用麦克纳姆轮与巡线避障模块，实现在狭小空间内对重型医疗设备的精准自主移动。",
+            "en": "Mecanum wheels plus line-following and obstacle avoidance enable precise autonomous movement of heavy medical equipment in confined clinical spaces."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["医疗", "MVP", "Radiology", "Prototype", "PRD", "预研"],
+        "en": ["Healthcare", "MVP", "Radiology", "Prototype", "PRD", "Research"]
+      }
+    },
+    {
+      "id": "siemens-health-pathway",
+      "section": "medical",
+      "cover": "assets/images/clinical-in-hospital-pathway.jpg",
+      "images": [
+        "assets/images/clinical-in-hospital-pathway.jpg",
+        "assets/images/clinical-in-hospital-pathway-2.jpg",
+        "assets/images/clinical-in-hospital-pathway-3.jpg"
+      ],
+      "title": "Clinical In-hospital Pathway",
+      "description": {
+        "zh": "院内临床路径交互装置，问卷调研 + 场景原型，陈列于上海西门子创新中心。2023.3—2023.6 作为独立设计师完成设计、制作与发布。",
+        "en": "In-hospital clinical pathway interactive installation—research and scenario prototypes, showcased at Siemens Healthineers Shanghai Innovation Center. Mar—Jun 2023, delivered end-to-end as an independent designer."
+      },
+      "highlights": [
+        {
+          "title": { "zh": "独立交付", "en": "Independent delivery" },
+          "text": {
+            "zh": "2023.3—2023.6 作为独立设计师，以约 2,000 元预算独立完成设计、制作与发布全流程。",
+            "en": "Mar—Jun 2023: as an independent designer, delivered design, fabrication, and launch end-to-end on a ~¥2,000 budget."
+          }
+        },
+        {
+          "title": { "zh": "高管汇报", "en": "Executive presentation" },
+          "text": {
+            "zh": "项目成果向西门子医疗 CEO / CFO 汇报展示。",
+            "en": "Presented project outcomes to Siemens Healthineers CEO and CFO."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["医疗", "用户研究", "Installation", "独立设计"],
+        "en": ["Healthcare", "Research", "Installation", "Independent"]
+      }
+    },
+    {
+      "id": "siemens-siepa",
+      "section": "industrial",
+      "featured": true,
+      "cover": "assets/images/hero-slide-3.jpg",
+      "images": [
+        "assets/images/hero-slide-3.jpg",
+        "assets/images/SiePA-2.jpg"
+      ],
+      "title": { "zh": "SiePA · 智能预测维护", "en": "SiePA · Predictive maintenance" },
+      "summary": {
+        "zh": "工业 AI 预测性维护系统与 3D 泵组视觉标准——多维数据分析、大屏交付与设备资产可视化一体建设。",
+        "en": "Industrial AI predictive maintenance plus 3D pump-skid visual standards—analytics, dashboard delivery, and equipment visualization in one program."
+      },
+      "description": {
+        "zh": "Siemens Predictive Analytics（SiePA）是一款工业 AI 智能预测性维护系统，基于生产过程数据（如温度、压力、流量等）进行多维度关联分析，实时评估运行状态，实现从被动维修到预测性维护的监控升级。负责工业 AI 大屏视觉规范、组件体系与高保真交付，支撑预测模型结果的可读呈现与运维决策。同步建立 3D 泵组 Keyshot 统一渲染与 360° 交互序列，制定 SiePA 设备类型模板与工程图视觉规范，保障监控界面与设备资产的一致呈现。",
+        "en": "Siemens Predictive Analytics (SiePA) is an industrial AI predictive maintenance system—multi-dimensional correlation analysis on process data (temperature, pressure, flow, and more) with real-time operational assessment, upgrading monitoring from reactive repair to predictive maintenance. Owned industrial AI dashboard visual standards, component system, and hi-fi delivery so model outputs read clearly and support ops decisions. In parallel, built Keyshot-unified 3D pump-skid renders and 360° interaction sequences, plus SiePA equipment-type templates and engineering drawing standards—keeping monitoring UI and equipment assets visually consistent."
+      },
+      "caseStudy": {
+        "role": {
+          "zh": "用户体验设计实习生 · 大屏与 3D 视觉负责人",
+          "en": "UX Design Intern · Dashboard & 3D visual lead"
+        },
+        "timeline": {
+          "zh": "2025.07 — 2025.12",
+          "en": "Jul — Dec 2025"
+        },
+        "team": {
+          "zh": "工业 AI 产品 · 前端 · 3D 设计协作",
+          "en": "Industrial AI product · Frontend · 3D design collaboration"
+        },
+        "problem": {
+          "zh": "工业预测性维护系统需要将多维度过程数据与 AI 模型输出，转化为运维人员可快速理解的监控界面——同时保证大屏、3D 设备资产与工程图在视觉与语义上的一致。",
+          "en": "Industrial predictive maintenance must turn multi-dimensional process data and AI model output into monitoring UIs operators can read quickly—while keeping dashboards, 3D equipment assets, and engineering drawings visually and semantically consistent."
+        },
+        "approach": {
+          "zh": "建立大屏组件规范与交付走查流程；并行制定 Keyshot 统一渲染标准、360° 交互序列与设备类型模板，让模型结果、设备认知与界面呈现使用同一套视觉语言。",
+          "en": "Built large-screen component specs and design-review delivery; in parallel, Keyshot rendering standards, 360° sequences, and equipment templates so model output, equipment recognition, and UI share one visual language."
+        },
+        "impact": [
+          {
+            "zh": "完成工业 AI 大屏组件体系与高保真交付",
+            "en": "Delivered industrial AI dashboard component system and hi-fi handoff"
+          },
+          {
+            "zh": "建立 3D 泵组统一渲染与 SiePA 设备模板规范",
+            "en": "Established unified 3D pump-skid rendering and SiePA equipment templates"
+          },
+          {
+            "zh": "支撑从被动维修到预测性维护的监控体验升级",
+            "en": "Supported UX upgrade from reactive repair to predictive maintenance"
+          }
+        ]
+      },
+      "highlights": [
+        {
+          "title": { "zh": "多维度过程数据分析", "en": "Multi-dimensional process analytics" },
+          "text": {
+            "zh": "整合温度、压力、流量等生产过程信号，进行跨维度关联分析，从分散指标中识别设备异常模式与风险趋势。",
+            "en": "Correlates temperature, pressure, flow, and other process signals across dimensions—surfacing anomaly patterns and risk trends from scattered plant metrics."
+          }
+        },
+        {
+          "title": { "zh": "实时运行状态评估", "en": "Real-time health assessment" },
+          "text": {
+            "zh": "持续评估设备运行健康度，将模型输出转化为可读的监控视图，帮助运维人员快速判断当前状态与关注优先级。",
+            "en": "Continuously assesses equipment health—translating model output into readable monitoring views so operators can judge status and priorities at a glance."
+          }
+        },
+        {
+          "title": { "zh": "预测性维护升级", "en": "Predictive maintenance upgrade" },
+          "text": {
+            "zh": "从故障后维修转向事前预警与计划性维护，降低非计划停机风险，提升产线连续性与维护效率。",
+            "en": "Shifts from break-fix to early warning and planned maintenance—reducing unplanned downtime and improving line continuity and maintenance efficiency."
+          }
+        },
+        {
+          "title": { "zh": "工业 AI 大屏交付", "en": "Industrial AI dashboard delivery" },
+          "text": {
+            "zh": "建立大屏组件规范与交付逻辑，从视觉风格到高保真原型一体走查，保障复杂 AI 监控界面的一致性与可落地性。",
+            "en": "Established large-screen component specs and delivery logic—from visual language to hi-fi prototypes and design reviews—keeping complex AI monitoring UIs consistent and shippable."
+          }
+        },
+        {
+          "title": { "zh": "3D 泵组统一渲染", "en": "Unified 3D pump-skid rendering" },
+          "text": {
+            "zh": "以 Keyshot 建立泵组设备统一渲染标准，输出风格一致的高质量 3D 资产，支撑 SiePA 界面中的设备可视化呈现。",
+            "en": "Keyshot-based unified rendering standards for pump skids—consistent, high-quality 3D assets that power equipment visualization across the SiePA UI."
+          }
+        },
+        {
+          "title": { "zh": "360° 交互与设备模板", "en": "360° interaction & equipment templates" },
+          "text": {
+            "zh": "制作 360° 交互浏览序列，沉淀 SiePA 设备类型模板与工程图视觉规范，让运维场景中的设备认知更直观、更统一。",
+            "en": "360° interactive viewing sequences plus SiePA equipment-type templates and engineering drawing standards—more intuitive, consistent equipment recognition in ops contexts."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["工业AI", "预测性维护", "3D可视化", "Design System", "B端"],
+        "en": ["Industrial AI", "Predictive maintenance", "3D visualization", "Design System", "B2B"]
+      }
+    },
+    {
+      "id": "siemens-mobile",
+      "section": "industrial",
+      "cover": "assets/images/hero-slide-4.jpg",
+      "images": [
+        "assets/images/hero-slide-4.jpg",
+        "assets/images/siePA-mobile-1.jpg",
+        "assets/images/siePA-mobile-2.jpg",
+        "assets/images/siePA-mobile-3.jpg",
+        "assets/images/siePA-mobile-4.jpg"
+      ],
+      "title": { "zh": "SiePA Mobile · 工单运维", "en": "SiePA Mobile · Work orders" },
+      "summary": {
+        "zh": "SiePA 移动端工单运维与 Maintenance Copilot「小西」——移动场景信息架构与工业 AI 对话体验一体设计。",
+        "en": "SiePA mobile work-order ops and Maintenance Copilot—mobile IA and industrial AI conversation design in one program."
+      },
+      "description": {
+        "zh": "SiePA 移动端面向现场工单运维场景，重构首页信息架构——聚焦当日维修任务、设备状态与备件批量管理，与 Web 大屏差异化定位、避免能力重复。同步设计 Maintenance Copilot「小西」IP 与工业 AI 对话界面，以符号化视觉语言适配 B 端审美，融入智能问答、故障诊断等运维工作流。",
+        "en": "SiePA mobile targets field work-order operations—home IA redesigned around daily maintenance tasks, device status, and spare-parts batch management, clearly differentiated from the web dashboard. In parallel, designed Maintenance Copilot IP「Xiaoxi」and conversational UI with symbolic visual language for B2B contexts—integrated into smart Q&A, fault diagnosis, and ops workflows."
+      },
+      "highlights": [
+        {
+          "title": { "zh": "移动端信息架构", "en": "Mobile information architecture" },
+          "text": {
+            "zh": "围绕现场运维动线重构首页结构，突出当日任务与设备状态，让移动端成为 Web 的补充而非重复。",
+            "en": "Rebuilt mobile home IA around field ops flows—today's tasks and device status first, so mobile complements the web dashboard instead of duplicating it."
+          }
+        },
+        {
+          "title": { "zh": "工单与备件管理", "en": "Work orders & spare parts" },
+          "text": {
+            "zh": "支持维修任务跟进、设备状态查看与备件批量管理，覆盖一线人员高频操作场景，提升现场响应效率。",
+            "en": "Maintenance task tracking, device status views, and spare-parts batch management—covering high-frequency field workflows for faster on-site response."
+          }
+        },
+        {
+          "title": { "zh": "Copilot IP · 小西", "en": "Copilot IP · Xiaoxi" },
+          "text": {
+            "zh": "打造 Maintenance Copilot「小西」工业 AI 角色 IP，建立可识别的品牌符号，增强智能助手在 B 端场景中的信任感与亲和力。",
+            "en": "Built Maintenance Copilot「Xiaoxi」as a recognizable industrial AI character—brand symbols that add trust and approachability to the assistant in B2B contexts."
+          }
+        },
+        {
+          "title": { "zh": "AI 对话界面", "en": "AI conversational UI" },
+          "text": {
+            "zh": "设计符号化对话界面与交互范式，适配工业审美与 AI 工作流，支撑智能问答、诊断引导等运维辅助能力的一致体验。",
+            "en": "Symbolic conversational UI and interaction patterns aligned with industrial aesthetics and AI workflows—consistent experience for smart Q&A, diagnostic guidance, and ops assistance."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["移动端", "工单运维", "Copilot", "AI", "B端"],
+        "en": ["Mobile", "Work orders", "Copilot", "AI", "B2B"]
+      }
+    },
+    {
+      "id": "microcosm-thesis",
+      "section": "demo",
+      "cover": "assets/images/MicroVision%20Slide%201.jpg",
+      "images": [
+        "assets/images/MicroVision%20Slide%201.jpg",
+        "assets/images/MicroVision%20Slide%202.jpg",
+        "assets/images/MicroVision%20Slide%203.jpg",
+        "assets/images/MicroVision%20Slide%204.jpg",
+        "assets/images/MicroVision%20Slide%205.jpg"
+      ],
+      "title": "Microcosm · Eye-tracking + Agent",
+      "description": {
+        "zh": "UAL 硕士论文 Demo：MediaPipe 眼动追踪、Agent 知识库问答与 Web 集成验证。",
+        "en": "UAL thesis demo—MediaPipe eye tracking, Agent Q&A knowledge base, web integration proof."
+      },
+      "tags": {
+        "zh": ["Demo", "Agent", "UAL"],
+        "en": ["Demo", "Agent", "UAL"]
+      }
+    }
+  ]
+}

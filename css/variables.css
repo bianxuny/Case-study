@@ -1,0 +1,74 @@
+/* IBM Carbon Design System — tokens from ibm.com/quantum/hardware */
+:root {
+  /* Background / layer */
+  --cds-background: #ffffff;
+  --cds-layer-01: #f4f4f4;
+  --cds-layer-02: #ffffff;
+  --cds-layer-accent-01: #e0e0e0;
+  --cds-layer-hover-01: #e8e8e8;
+  --cds-leadspace-bg: #e9e9e9;
+
+  /* Text */
+  --cds-text-primary: #161616;
+  --cds-text-secondary: #525252;
+  --cds-text-helper: #6f6f6f;
+  --cds-text-inverse: #ffffff;
+  --cds-text-on-color: #ffffff;
+
+  /* Link / interactive */
+  --cds-link-primary: #0f62fe;
+  --cds-link-primary-hover: #0043ce;
+  --cds-gradient-blue: linear-gradient(90deg, #0043ce 0%, #0f62fe 45%, #4589ff 100%);
+  --cds-timeline-education: #c6c6c6;
+  --cds-timeline-education-node: #a8a8a8;
+  --cds-border-subtle-00: #e0e0e0;
+  --cds-border-inverse: #161616;
+
+  /* Layout */
+  --cds-grid-max-width: 96rem;
+  --cds-grid-gutter: 1rem;
+  --header-height: 3rem;
+  --sidebar-width: 17.5rem;
+  --panel-width: 50vw;
+  --scroll-offset: var(--header-height);
+  --hero-screen-height: calc(100dvh - var(--header-height));
+  --cds-shadow-raised: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  /* Breakpoints (Carbon) */
+  --bp-sm: 42rem;
+  --bp-md: 66rem;
+  --bp-lg: 82rem;
+  --bp-max: 99rem;
+
+  /* Spacing scale (Carbon rem-based) */
+  --space-02: 0.25rem;
+  --space-03: 0.5rem;
+  --space-04: 0.75rem;
+  --space-05: 1rem;
+  --space-06: 1.5rem;
+  --space-07: 2rem;
+  --space-08: 2.5rem;
+  --space-09: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+
+  /* Typography families */
+  --font-sans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Masonry */
+  --masonry-gap: 1rem;
+  --masonry-columns: 3;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+}
+
+@media (max-width: 1024px) {
+  :root { --masonry-columns: 2; }
+}
+
+@media (max-width: 640px) {
+  :root { --masonry-columns: 1; --masonry-gap: 0.75rem; }
+}

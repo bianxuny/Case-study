@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jiayi's Case Study — Product Designer · Rapid Prototyper。医疗 MVP、工业 B 端、实验室自动化。">
+  <title>Jiayi's Case Study — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/carbon-type.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/page-navigation.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/sidebar-about.css">
+  <link rel="stylesheet" href="css/hero-carousel.css">
+  <link rel="stylesheet" href="css/card-preview.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/skill-pipeline.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="site-header__nav" aria-label="Site header">
+      <button type="button" class="site-header__menu" id="site-nav-open" aria-label="Open navigation" aria-controls="page-navigation">
+        <svg focusable="false" width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M4 6H22V8H4z"></path><path d="M4 12H22V14H4z"></path><path d="M4 18H22V20H4z"></path><path d="M4 24H22V26H4z"></path>
+          <path d="M26 6H28V8H26z"></path><path d="M26 12H28V14H26z"></path><path d="M26 18H28V20H26z"></path><path d="M26 24H28V26H26z"></path>
+        </svg>
+      </button>
+      <a class="site-header__logo" href="#overview">
+        <img class="site-header__avatar" src="assets/images/header-avatar.png" alt="" width="28" height="28" decoding="async" />
+        <span data-field="meta.name">Jiayi's Case Study</span>
+      </a>
+      <div class="site-header__lang" role="group" aria-label="Language">
+        <button type="button" class="site-header__lang-btn site-header__lang-btn--active" id="lang-zh" aria-pressed="true">中文</button>
+        <span class="site-header__lang-divider" aria-hidden="true">/</span>
+        <button type="button" class="site-header__lang-btn" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <nav class="page-navigation page-navigation--sidebar" id="page-navigation" aria-label="Page navigation"></nav>
+
+    <div class="page-shell__main">
+  <main>
+    <div class="page-hero-screen" id="overview">
+      <div class="page-shell__hero-stack" id="hero-carousel-stack" hidden aria-hidden="true">
+        <div class="hero-carousel__frame">
+          <div class="page-shell__carousel" id="hero-carousel"></div>
+          <div class="page-shell__carousel-ui" id="hero-carousel-ui" hidden aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="page-hero-screen__foreground">
+        <!-- Leadspace hero — IBM hardware page pattern -->
+        <div class="page-section-wrapper page-section-wrapper--leadspace">
+          <div class="leadspace cds-grid leadspace__grid">
+            <div class="leadspace__text col-span-16">
+              <p class="leadspace__role text-body-compact-01 text-text-secondary" data-field="meta.role">Product Designer · Rapid Prototyper</p>
+              <h1 class="text-fluid-display-01" id="hero-title" data-field="meta.tagline">
+                医疗与工业系统，从 Demo 到交付
+              </h1>
+              <p class="leadspace__lead text-body-02 text-text-secondary" data-field="meta.description">
+                UAL 创意计算机硕士。专注医疗 MVP、工业 B 端与实验室自动化——Design System、数据管道与高保真原型。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistics — bg #e9e9e9, border-top, Carbon grid -->
+        <section class="page-section-wrapper page-section-wrapper--stats" aria-label="Statistics">
+          <ul class="stats-list cds-grid" id="stats-grid"></ul>
+          <div class="stats-cat-track" aria-hidden="true">
+            <div class="stats-cat__walker">
+              <img class="stats-cat__sprite" src="assets/images/walking-cat.png" alt="" width="48" height="48" decoding="async">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Gallery sections -->
+    <div id="gallery-sections"></div>
+
+    <!-- Capability model · hourglass -->
+    <section class="page-section-wrapper page-section-wrapper--secondary page-section-wrapper--pt page-section-wrapper--pb"
+             id="skills" hidden aria-labelledby="skills-title">
+      <div class="cds-grid">
+        <div class="section-header col-span-16">
+          <h2 class="section-header__title text-heading-05" id="skills-title">我的用户旅程</h2>
+          <div class="section-header__descriptions">
+            <p class="content-description__copy text-body-02 text-text-secondary" id="skills-subtitle"></p>
+          </div>
+        </div>
+        <div class="col-span-16" id="skill-pipeline"></div>
+      </div>
+    </section>
+
+    <!-- About + core strengths -->
+    <section class="page-section-wrapper page-section-wrapper--white page-section-wrapper--pt page-section-wrapper--pb"
+             id="about" aria-labelledby="about-title">
+      <div class="cds-grid">
+        <div class="section-header col-span-16">
+          <h2 class="section-header__title text-heading-05" id="about-title">关于我</h2>
+          <div class="section-header__descriptions">
+            <p class="content-description__copy text-body-02 text-text-secondary" data-about="bio"></p>
+          </div>
+        </div>
+        <div class="col-span-16">
+          <div class="masonry masonry--text" id="highlights-grid" role="list"></div>
+        </div>
+        <ul class="about-tags col-span-16" id="about-focus"></ul>
+      </div>
+    </section>
+
+    <!-- Writing / reflections -->
+    <section class="page-section-wrapper page-section-wrapper--secondary page-section-wrapper--pt page-section-wrapper--pb"
+             id="writing" hidden aria-labelledby="writing-title">
+      <div class="cds-grid">
+        <div class="section-header col-span-16">
+          <h2 class="section-header__title text-heading-05" id="writing-title">写作</h2>
+          <div class="section-header__descriptions">
+            <p class="content-description__copy text-body-02 text-text-secondary" id="writing-subtitle"></p>
+          </div>
+        </div>
+        <div class="col-span-16">
+          <div class="blog-list" id="blog-list" role="list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <p class="site-footer__open text-label-01" id="footer-open-to-work" hidden></p>
+          <p class="site-footer__copy">&copy; <span id="year"></span> <span data-field="meta.name">Jiayi's Case Study</span> · <span id="footer-role">Product & UX Designer</span></p>
+        </div>
+        <nav class="site-footer__links" id="footer-links" aria-label="Contact"></nav>
+      </div>
+    </div>
+  </footer>
+    </div>
+  </div>
+
+  <div class="blog-panel" id="blog-panel" aria-hidden="true">
+    <button type="button" class="blog-panel__backdrop" id="blog-panel-backdrop" aria-label="Close article" tabindex="-1"></button>
+    <div class="blog-panel__dialog" role="dialog" aria-modal="true" aria-labelledby="blog-panel-title">
+      <header class="blog-panel__header">
+        <h3 class="blog-panel__title text-heading-03" id="blog-panel-title"></h3>
+        <button type="button" class="blog-panel__close" id="blog-panel-close" aria-label="Close">&times;</button>
+      </header>
+      <div class="blog-panel__scroll">
+        <div class="blog-panel__meta" id="blog-panel-meta"></div>
+        <div class="blog-panel__body" id="blog-panel-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-panel" id="project-panel" aria-hidden="true">
+    <button type="button" class="project-panel__backdrop" id="project-panel-backdrop" aria-label="Close project" tabindex="-1"></button>
+    <div class="project-panel__dialog" role="dialog" aria-modal="true" aria-labelledby="project-panel-title">
+      <header class="project-panel__header">
+        <h2 class="project-panel__title text-heading-04" id="project-panel-title"></h2>
+        <button type="button" class="project-panel__close" id="project-panel-close" aria-label="Close">&times;</button>
+      </header>
+      <div class="project-panel__scroll">
+        <div class="project-panel__media" id="project-panel-media" hidden></div>
+        <div class="project-panel__body" id="project-panel-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/masonry.js" type="module"></script>
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

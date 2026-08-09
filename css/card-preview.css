@@ -1,0 +1,42 @@
+/* Hover preview — thumbnail beside the hovered card body */
+
+.card-preview-rail {
+  position: fixed;
+  z-index: 900;
+  width: 10.5rem;
+  padding: var(--space-04);
+  background: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle-00);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 200ms var(--ease-out),
+    visibility 200ms var(--ease-out),
+    top 160ms var(--ease-out),
+    left 160ms var(--ease-out);
+}
+
+.card-preview-rail--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-preview-rail__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--cds-border-subtle-00);
+}
+
+body.project-panel-open .card-preview-rail {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 65.99rem) {
+  .card-preview-rail {
+    display: none;
+  }
+}

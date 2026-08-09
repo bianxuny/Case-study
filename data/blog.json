@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "title": { "zh": "写作", "en": "Writing" },
+    "subtitle": {
+      "zh": "沉淀在复杂场景里的反思与感悟——关于设计、迭代，以及在约束之间找到可推进的路径。",
+      "en": "Reflections distilled from complex work—on design, iteration, and finding actionable paths amid constraints."
+    }
+  },
+  "posts": [
+    {
+      "id": "complex-scenario-framework",
+      "date": "2022-12-01",
+      "dateLabel": {
+        "zh": "2022.12 — 至今",
+        "en": "Dec 2022 — Present"
+      },
+      "status": "published",
+      "featuredInAbout": true,
+      "listInSection": false,
+      "title": {
+        "zh": "另一个我",
+        "en": "Another me"
+      },
+      "summary": {
+        "zh": "从相遇到重逢，五段时间线记录一路走来。",
+        "en": "From first encounter to reunion—a five-part timeline of the road so far."
+      },
+      "content": {
+        "zh": [
+          {
+            "type": "timeline",
+            "steps": [
+              { "title": "01 · 相遇", "image": "assets/images/Group 1.svg" },
+              { "title": "02 · 山川与河流", "image": "assets/images/Group 2.jpg" },
+              { "title": "03 · 岁月里重逢", "image": "assets/images/Group 3.png" },
+              { "title": "04 · 我相信我所相信的，我坚持我所有坚持的", "image": "assets/images/Group 4.jpg" },
+              { "title": "05 · 伴随着春鸣与夏虫，日出与月升", "image": "assets/images/Group 5.png" }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "最后我微笑和摆手，相信一切都是最好的安排"
+          }
+        ],
+        "en": [
+          {
+            "type": "timeline",
+            "steps": [
+              { "title": "01 · Encounter", "image": "assets/images/Group 1.svg" },
+              { "title": "02 · Mountains & rivers", "image": "assets/images/Group 2.jpg" },
+              { "title": "03 · Reunion through the years", "image": "assets/images/Group 3.png" },
+              { "title": "04 · I believe what I believe, I hold on to all I hold on to", "image": "assets/images/Group 4.jpg" },
+              { "title": "05 · With spring birds and summer crickets, sunrise and moonrise", "image": "assets/images/Group 5.png" }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "At the end I smiled and waved goodbye, trusting that everything is the best arrangement"
+          }
+        ]
+      }
+    },
+    {
+      "id": "find-the-next-step",
+      "date": "2025-03-15",
+      "status": "published",
+      "listInSection": true,
+      "tags": {
+        "zh": ["反思", "复杂场景"],
+        "en": ["Reflection", "Complex scenarios"]
+      },
+      "title": {
+        "zh": "在复杂里，先找到可推进的那一步",
+        "en": "In complexity, find the step you can actually move"
+      },
+      "summary": {
+        "zh": "多重约束并存时，完美方案往往不存在。与其等待全貌清晰，不如先推进最小可验证的一步。",
+        "en": "When many constraints collide, the perfect answer rarely exists. Rather than wait for full clarity, move the smallest verifiable step first."
+      },
+      "content": {
+        "zh": [
+          {
+            "type": "paragraph",
+            "text": "做过医疗 MVP、工业 B 端和实验室自动化之后，我越来越确信：复杂场景里最难的不是「想不出方案」，而是「想得太全、动得太慢」。技术、流程、合规、成本、时间线——约束一旦摊开，很容易陷入 paralysis by analysis。"
+          },
+          {
+            "type": "paragraph",
+            "text": "后来我换了一个问法：此刻，在现有约束下，哪一步推进了不会推翻全局，又能带来新信息？这个问法把「解决问题」变成了「收集证据、缩小不确定性」。"
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "三个常有的误区"
+          },
+          {
+            "type": "list",
+            "items": [
+              "把职能标签当成边界——PM 只能写 PRD、UX 只能画原型，于是问题被切碎，没人对「可交付结果」负责。",
+              "把约束当成障碍——其实约束是地图，冲突可见了，路径才谈得上取舍。",
+              "把 Demo 当成装饰——没有数据或现场反馈的 Demo，只是漂亮的假设。"
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "写作不是为了证明标签，而是为了在复杂里找到可推进的路径。"
+          },
+          {
+            "type": "paragraph",
+            "text": "我现在习惯在项目早期就做一个「约束表」：谁在意什么、什么不能动、什么可以试。表不需要完美，但需要诚实。诚实之后，下一步往往自己就浮现了。"
+          }
+        ],
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "After medical MVPs, industrial B2B, and lab automation work, I'm convinced the hardest part of complex scenarios isn't lacking ideas—it's thinking too completely and moving too slowly. Once you lay out tech, process, compliance, cost, and timelines, paralysis by analysis is easy."
+          },
+          {
+            "type": "paragraph",
+            "text": "I changed the question: right now, under current constraints, which step advances the work without collapsing the whole picture—and returns new information? That reframes problem-solving as evidence-gathering and uncertainty reduction."
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "Three common traps"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Using role labels as boundaries—PM writes PRD, UX draws prototypes, and no one owns the deliverable outcome.",
+              "Treating constraints as blockers—they're a map; only when conflicts are visible can you negotiate trade-offs.",
+              "Treating demos as decoration—a demo without data or field feedback is just a polished assumption."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Writing isn't to prove a label—it's to find a path you can move on inside complexity."
+          },
+          {
+            "type": "paragraph",
+            "text": "I now start early with a constraint map: who cares about what, what's fixed, what's safe to try. It doesn't need to be perfect—just honest. After honesty, the next step often reveals itself."
+          }
+        ]
+      }
+    },
+    {
+      "id": "distill-before-ship",
+      "date": "2025-06-01",
+      "status": "published",
+      "listInSection": true,
+      "tags": {
+        "zh": ["沉淀", "可复用"],
+        "en": ["Distillation", "Reusable"]
+      },
+      "title": {
+        "zh": "沉淀不是停下来，是把路走宽",
+        "en": "Distillation isn't pausing—it's widening the road"
+      },
+      "summary": {
+        "zh": "每次交付之后，值得追问：哪些判断被验证了、哪些模块可以复用、哪些经验该写进下一次的默认选项。",
+        "en": "After each delivery, ask what was validated, what modules can be reused, and what should become a default next time."
+      },
+      "content": {
+        "zh": [
+          {
+            "type": "paragraph",
+            "text": "我用沙漏结构理解自己的工作方式：上方是 AI 工具与实践的多元输入，腰部是经验与沉淀充当的门控——压缩噪声、提炼判断；下方是把知识释放到业务场景里，快速迭代并持续回流。"
+          },
+          {
+            "type": "paragraph",
+            "text": "「沉淀」常常被误解成文档归档或项目收尾。对我而言，沉淀发生在交付过程中：一个组件为什么这样拆、一种数据管道为什么这样建、一次现场反馈为什么推翻原方案——这些才是可复用的能力，而不是某份 PPT 的页码。"
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "交付后我会留三个问题"
+          },
+          {
+            "type": "framework",
+            "steps": [
+              { "title": "01 · 什么被验证了", "text": "哪些假设被 Demo、数据或现场证明是对的？写清楚，避免团队凭记忆重复争论。" },
+              { "title": "02 · 什么可以模块化", "text": "交互模式、Design System 片段、数据 schema——下一次遇到类似场景，默认选项是什么？" },
+              { "title": "03 · 什么需要回流", "text": "现场发现的边界条件、用户没说出口的需求，如何回到上游输入，让下一次门控更准？" }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "快速迭代的价值，不在于快本身，而在于每一次快都有东西留下来。"
+          }
+        ],
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "I use an hourglass to describe how I work: diverse input from AI tools and practice at the top; experience and distillation as the gate in the middle—compressing noise, refining judgment; releasing knowledge into business scenarios at the bottom, iterating fast with continuous feedback loops."
+          },
+          {
+            "type": "paragraph",
+            "text": "Distillation is often mistaken for filing documents at project close. For me it happens during delivery: why a component splits this way, why a data pipeline is shaped like this, why field feedback overturned the original plan—these are reusable capabilities, not slide page numbers."
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "Three questions after shipping"
+          },
+          {
+            "type": "framework",
+            "steps": [
+              { "title": "01 · What was validated", "text": "Which assumptions were proven by demo, data, or the field? Write it down so the team doesn't re-litigate from memory." },
+              { "title": "02 · What can be modularized", "text": "Interaction patterns, Design System pieces, data schemas—what becomes the default next time a similar scenario appears?" },
+              { "title": "03 · What needs to loop back", "text": "Boundary conditions found on site, unstated user needs—how do they return upstream so the next gate is sharper?" }
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "The value of fast iteration isn't speed alone—it's that something stays behind after each cycle."
+          }
+        ]
+      }
+    },
+    {
+      "id": "demo-as-argument",
+      "date": "2025-09-20",
+      "status": "published",
+      "listInSection": true,
+      "tags": {
+        "zh": ["Demo", "验证"],
+        "en": ["Demo", "Validation"]
+      },
+      "title": {
+        "zh": "Demo 是一种论证，不是一张效果图",
+        "en": "A demo is an argument, not a render"
+      },
+      "summary": {
+        "zh": "高保真原型真正的力量，是让多方在同一个具体对象上讨论——而不是各自脑补不同的未来。",
+        "en": "High-fidelity prototypes matter because they let everyone argue about the same concrete thing—not different imagined futures."
+      },
+      "content": {
+        "zh": [
+          {
+            "type": "paragraph",
+            "text": "在 B 端和医疗项目里，我遇到过太多次「会上所有人都同意，会后各自理解不同」。文字和线框图有歧义空间，而可点击、可演示、可对接数据的 Demo，会把讨论从「你觉得呢」拉到「你看这里」。"
+          },
+          {
+            "type": "paragraph",
+            "text": "这也是我把这个作品集本身当作 Demo 的原因：结构（JSON 数据层）与呈现（页面）分离，改文案、换案例、调布局，都可以快速验证——边做边沉淀，而不是一次性定稿。"
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "我心目中「有效 Demo」的标准"
+          },
+          {
+            "type": "list",
+            "items": [
+              "能回答一个具体问题——不是「展示全部功能」，而是「证明这条路径可行」。",
+              "能接入真实或近似真实的数据——空壳交互说服不了工程与业务。",
+              "能暴露约束冲突——如果 Demo 里一切顺滑，说明它还没碰到真正的难点。",
+              "能留下可交付的片段——组件、规范、脚本，而不只是一段录屏。"
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "好的 Demo 会制造分歧，而分歧正是复杂场景里最需要的东西。"
+          },
+          {
+            "type": "paragraph",
+            "text": "设计在 AI 时代的价值，不是产出更多界面，而是更快地把「尚未被验证的判断」变成「可以被讨论的对象」。Demo 是论证；论证推进共识；共识才能交付。"
+          }
+        ],
+        "en": [
+          {
+            "type": "paragraph",
+            "text": "In B2B and healthcare projects, I've seen too many meetings where everyone agrees, then leaves with different mental models. Text and wireframes leave room for ambiguity; clickable, demonstrable, data-connected demos move the conversation from \"what do you think?\" to \"look here.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "That's why I treat this portfolio itself as a demo: structure (JSON data) separated from presentation (the page)—copy, cases, and layout can be validated quickly, distilled as you go, rather than locked in one shot."
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "What makes a demo effective"
+          },
+          {
+            "type": "list",
+            "items": [
+              "It answers a specific question—not \"show every feature,\" but \"prove this path works.\"",
+              "It connects to real or near-real data—empty interactions won't convince engineering or business.",
+              "It surfaces constraint conflicts—if everything is smooth in the demo, it hasn't hit the hard part yet.",
+              "It leaves shippable fragments—components, specs, scripts—not just a screen recording."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "A good demo creates disagreement—and disagreement is exactly what complex work needs."
+          },
+          {
+            "type": "paragraph",
+            "text": "Design's value in the AI era isn't producing more screens—it's turning unvalidated judgment into something discussable, faster. A demo is an argument; arguments advance alignment; alignment enables delivery."
+          }
+        ]
+      }
+    }
+  ]
+}
