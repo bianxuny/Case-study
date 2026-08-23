@@ -1,5 +1,8 @@
 /* IBM Carbon Design System — tokens from ibm.com/quantum/hardware */
-:root {
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
   /* Background / layer */
   --cds-background: #ffffff;
   --cds-layer-01: #f4f4f4;
@@ -24,6 +27,59 @@
   --cds-border-subtle-00: #e0e0e0;
   --cds-border-inverse: #161616;
 
+  /* Overlays */
+  --cds-overlay-01: rgba(255, 255, 255, 0.45);
+  --cds-overlay-02: rgba(255, 255, 255, 0.65);
+  --cds-overlay-03: rgba(255, 255, 255, 0.92);
+  --cds-overlay-04: rgba(255, 255, 255, 0.72);
+  --cds-overlay-border: rgba(255, 255, 255, 0.35);
+
+  /* Footer (IBM dark bar on light pages) */
+  --cds-footer-bg: #21272a;
+  --cds-footer-text: #f4f4f4;
+  --cds-footer-muted: #c6c6c6;
+  --cds-footer-link: #78a9ff;
+  --cds-shadow-raised: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cds-background: #161616;
+  --cds-layer-01: #262626;
+  --cds-layer-02: #393939;
+  --cds-layer-accent-01: #393939;
+  --cds-layer-hover-01: #333333;
+  --cds-leadspace-bg: #262626;
+
+  --cds-text-primary: #f4f4f4;
+  --cds-text-secondary: #c6c6c6;
+  --cds-text-helper: #a8a8a8;
+  --cds-text-inverse: #161616;
+  --cds-text-on-color: #ffffff;
+
+  --cds-link-primary: #78a9ff;
+  --cds-link-primary-hover: #a6c8ff;
+  --cds-gradient-blue: linear-gradient(90deg, #78a9ff 0%, #4589ff 45%, #a6c8ff 100%);
+  --cds-timeline-education: #6f6f6f;
+  --cds-timeline-education-node: #8d8d8d;
+  --cds-border-subtle-00: #393939;
+  --cds-border-inverse: #f4f4f4;
+  --cds-shadow-raised: 0 2px 8px rgba(0, 0, 0, 0.55);
+
+  --cds-overlay-01: rgba(22, 22, 22, 0.55);
+  --cds-overlay-02: rgba(22, 22, 22, 0.75);
+  --cds-overlay-03: rgba(38, 38, 38, 0.92);
+  --cds-overlay-04: rgba(38, 38, 38, 0.78);
+  --cds-overlay-border: rgba(255, 255, 255, 0.12);
+
+  --cds-footer-bg: #0b0b0b;
+  --cds-footer-text: #f4f4f4;
+  --cds-footer-muted: #c6c6c6;
+  --cds-footer-link: #78a9ff;
+}
+
+:root {
   /* Layout */
   --cds-grid-max-width: 96rem;
   --cds-grid-gutter: 1rem;
@@ -32,7 +88,6 @@
   --panel-width: 50vw;
   --scroll-offset: var(--header-height);
   --hero-screen-height: calc(100dvh - var(--header-height));
-  --cds-shadow-raised: 0 2px 6px rgba(0, 0, 0, 0.3);
 
   /* Breakpoints (Carbon) */
   --bp-sm: 42rem;

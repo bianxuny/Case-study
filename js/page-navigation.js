@@ -1,4 +1,3 @@
-import { renderSidebarTimelineHtml } from './timeline.js';
 import { renderSidebarAboutHtml } from './sidebar-about.js';
 import { sidebarLabel } from './i18n.js';
 
@@ -21,6 +20,7 @@ export function buildNavItems(locale) {
   return [
     { id: 'overview', label: sidebarLabel('overview', locale) },
     { id: 'skills', label: sidebarLabel('skills', locale) },
+    { id: 'experience', label: sidebarLabel('experience', locale) },
     { id: 'about', label: sidebarLabel('about', locale) },
     { id: 'writing', label: sidebarLabel('writing', locale) },
   ];
@@ -36,11 +36,10 @@ export function buildNavStructure(locale) {
 /**
  * @param {object[]} navItems
  * @param {object} structure
- * @param {object} [timeline]
  * @param {object} [about]
  * @param {import('./i18n.js').Locale} locale
  */
-export function renderPageNavigation(navItems, structure, timeline, about, locale) {
+export function renderPageNavigation(navItems, structure, about, locale) {
   const nav = document.getElementById('page-navigation');
   if (!nav) return;
 
@@ -56,12 +55,16 @@ export function renderPageNavigation(navItems, structure, timeline, about, local
     )
     .join('');
 
-  const timelineHtml = renderSidebarTimelineHtml(timeline, locale);
   const aboutHtml = renderSidebarAboutHtml(about, locale);
   const skillsLabel = sidebarLabel('skills', locale);
   const skillsLinkHtml = `
       <li class="page-navigation__list__item">
         <a class="page-navigation__list__item__link" href="#skills" data-nav-id="skills">${skillsLabel}</a>
+      </li>`;
+  const experienceLabel = sidebarLabel('experience', locale);
+  const experienceLinkHtml = `
+      <li class="page-navigation__list__item">
+        <a class="page-navigation__list__item__link" href="#experience" data-nav-id="experience">${experienceLabel}</a>
       </li>`;
   const writingLabel = sidebarLabel('writing', locale);
   const writingLinkHtml = `
@@ -80,8 +83,8 @@ export function renderPageNavigation(navItems, structure, timeline, about, local
       </div>
       <ul class="page-navigation__list" id="page-nav-list">
         ${topHtml}
-        ${timelineHtml}
         ${skillsLinkHtml}
+        ${experienceLinkHtml}
         ${aboutHtml}
         ${writingLinkHtml}
       </ul>

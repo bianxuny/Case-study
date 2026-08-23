@@ -12,9 +12,15 @@ import {
   initPageNavigationSections,
   initPageNavigationHighlight,
 } from './page-navigation.js';
-import { initStatsCat } from './stats-cat.js';
 import { renderHeroCarousel } from './hero-carousel.js';
-import { getLocale, setLocale, txt } from './i18n.js';
+import {
+  renderExperienceTimeline,
+  initExperienceHelix,
+  destroyExperienceHelix,
+} from './timeline.js';
+import { getLocale, setLocale, sidebarLabel, txt } from './i18n.js';
+import { getTheme, toggleTheme } from './theme.js';
+import { initPageLoader, markAppReady, updateLoaderCopy, warmupPortfolioMedia } from './loader.js';
 import { UI } from './ui-strings.js';
 import {
   renderSkillPipeline,
@@ -46,7 +52,9 @@ const itemsById = new Map();
 let openPanelId = null;
 
 async function init() {
+  initPageLoader();
   setLocale(currentLocale);
+  updateLoaderCopy(currentLocale);
 
   try {
     const [portfolio, blog] = await Promise.all([loadPortfolio(), loadBlog()]);
@@ -56,6 +64,7 @@ async function init() {
     renderSidebar(portfolioData, currentLocale);
     renderPageContent(portfolioData, currentLocale);
     initLangSwitcher();
+    initThemeToggle();
     initProjectPanel();
     initProjectTriggers();
     initBlogPanel();
@@ -68,20 +77,21 @@ async function init() {
     const gallery = document.getElementById('gallery-sections');
     initVideoHoverPlay(gallery);
     initCardPreview(gallery);
+    warmupPortfolioMedia(portfolioData);
   } catch (err) {
     console.error('Failed to load portfolio:', err);
     showLoadError(currentLocale);
   }
 
-  initStatsCat();
   document.getElementById('year').textContent = new Date().getFullYear();
+  markAppReady();
 }
 
 /** @param {object} data @param {import('./i18n.js').Locale} locale */
 function renderSidebar(data, locale) {
   const navItems = buildNavItems(locale);
   const navStructure = buildNavStructure(locale);
-  renderPageNavigation(navItems, navStructure, data.timeline, data.about, locale);
+  renderPageNavigation(navItems, navStructure, data.about, locale);
   initPageNavigationToggle();
   initPageNavigationSections();
   initPageNavigationHighlight(navItems);
@@ -96,9 +106,11 @@ function renderPageContent(data, locale) {
   renderAbout(data.about, locale);
   renderGallery(data.sections, data.items, locale, getHeroFirstImageSrc(data.heroCarousel));
   renderSkillPipeline(data.skillPipeline, locale);
+  renderExperience(data.timeline, locale);
   renderBlogSection(blogData, locale);
   renderContactFooter(data, locale);
   updateLangSwitcher(locale);
+  updateThemeToggle(locale);
 }
 
 async function loadPortfolio() {
@@ -193,6 +205,29 @@ function renderHighlights(highlights, locale) {
     .join('');
 }
 
+/** @param {object} timeline @param {import('./i18n.js').Locale} locale */
+function renderExperience(timeline, locale) {
+  const section = document.getElementById('experience');
+  const mount = document.getElementById('experience-timeline');
+  const title = document.getElementById('experience-title');
+  if (!section || !mount) return;
+
+  destroyExperienceHelix();
+
+  if (!timeline?.items?.length) {
+    section.setAttribute('hidden', '');
+    mount.innerHTML = '';
+    return;
+  }
+
+  section.removeAttribute('hidden');
+  if (title) {
+    title.textContent = txt(timeline.label, locale) || sidebarLabel('experience', locale);
+  }
+  mount.innerHTML = renderExperienceTimeline(timeline, locale);
+  initExperienceHelix(mount);
+}
+
 /** @param {object} about @param {import('./i18n.js').Locale} locale */
 function renderAbout(about, locale) {
   if (!about) return;
@@ -257,7 +292,9 @@ function switchLocale(locale) {
   if (locale === currentLocale || !portfolioData) return;
   currentLocale = locale;
   setLocale(locale);
+  updateLoaderCopy(locale);
   destroySkillPipeline();
+  destroyExperienceHelix();
   renderSidebar(portfolioData, locale);
   renderPageContent(portfolioData, locale);
   if (openPanelId) openProjectPanel(openPanelId);
@@ -275,6 +312,28 @@ function updateLangSwitcher(locale) {
   btnEn?.classList.toggle('site-header__lang-btn--active', locale === 'en');
   btnZh?.setAttribute('aria-pressed', locale === 'zh' ? 'true' : 'false');
   btnEn?.setAttribute('aria-pressed', locale === 'en' ? 'true' : 'false');
+}
+
+function initThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    toggleTheme();
+    updateThemeToggle(currentLocale);
+  });
+  updateThemeToggle(currentLocale);
+}
+
+/** @param {import('./i18n.js').Locale} locale */
+function updateThemeToggle(locale) {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  const isDark = getTheme() === 'dark';
+  btn.setAttribute('aria-label', txt(isDark ? UI.switchToLight : UI.switchToDark, locale));
+  btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  btn.title = txt(isDark ? UI.switchToLight : UI.switchToDark, locale);
 }
 
 function initProjectPanel() {

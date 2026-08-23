@@ -521,6 +521,18 @@
   box-shadow: 0 2px 8px rgba(138, 63, 252, 0.16);
 }
 
+[data-theme="dark"] .skill-tag-group--purple:hover .skill-node--leaf {
+  background: var(--cds-layer-02);
+}
+
+[data-theme="dark"] .skill-tag-group--purple:hover .skill-node__label {
+  color: var(--carbon-purple-30);
+}
+
+[data-theme="dark"] .skill-tag-group--purple:hover .skill-node--theme-purple.skill-node--leaf:hover {
+  background: var(--cds-layer-02);
+}
+
 @media (min-width: 66rem) {
   .skill-hourglass {
     min-height: 46rem;

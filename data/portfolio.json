@@ -92,7 +92,7 @@
         "end": "2025-12",
         "icon": "🏭",
         "org": { "zh": "西门子（数字化工业）", "en": "Siemens Digital Industries" },
-        "title": { "zh": "用户体验设计实习", "en": "UX Design Intern" },
+        "title": { "zh": "用户体验设计师", "en": "UX Designer" },
         "url": "https://www.siemens.com/cn/zh/company/about/businesses/digital-industries.html"
       },
       {
@@ -116,8 +116,8 @@
         "start": "2022-12",
         "end": "2023-08",
         "icon": "🩻",
-        "org": { "zh": "西门子医疗", "en": "Siemens Healthineers" },
-        "title": { "zh": "产品设计实习", "en": "Product Design Intern" },
+        "org": { "zh": "西门子医疗（Shanghai Innovation Center）", "en": "Siemens Healthineers (Shanghai Innovation Center)" },
+        "title": { "zh": "产品设计师", "en": "Product Designer" },
         "url": "https://www.siemens-healthineers.cn/shanghai-innovation-center"
       },
       {
@@ -126,7 +126,7 @@
         "end": "2022-10",
         "icon": "🚙",
         "org": { "zh": "奇瑞捷豹路虎", "en": "Chery Jaguar Land Rover" },
-        "title": { "zh": "智能驾驶座舱实习", "en": "Intelligent Cockpit Intern" },
+        "title": { "zh": "座舱设计师", "en": "Cockpit Designer" },
         "url": "https://www.cheryjaguarlandrover.com/"
       }
     ]
@@ -659,8 +659,8 @@
       },
       "caseStudy": {
         "role": {
-          "zh": "用户体验设计实习生 · 大屏与 3D 视觉负责人",
-          "en": "UX Design Intern · Dashboard & 3D visual lead"
+          "zh": "用户体验设计师 · 大屏与 3D 视觉负责人",
+          "en": "UX Designer · Dashboard & 3D visual lead"
         },
         "timeline": {
           "zh": "2025.07 — 2025.12",

@@ -5,12 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Jiayi's Case Study — Product Designer · Rapid Prototyper。医疗 MVP、工业 B 端、实验室自动化。">
   <title>Jiayi's Case Study — Portfolio</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = saved === 'dark' || saved === 'light'
+          ? saved
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #e9e9e9;
+    }
+    [data-theme="dark"] .page-loader { background: #262626; }
+    html[data-loader="skip"] .page-loader:not(.page-loader--exit) { display: none; }
+    html:not([data-loader="skip"]) { overflow: hidden; }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="preload" href="data/portfolio.json" as="fetch" crossorigin>
+  <link rel="preload" href="assets/images/header-avatar.png" as="image">
   <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/loader.css">
   <link rel="stylesheet" href="css/carbon-type.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
@@ -23,6 +52,25 @@
   <link rel="stylesheet" href="css/skill-pipeline.css">
 </head>
 <body>
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-busy="true">
+    <div class="page-loader__grid" aria-hidden="true"></div>
+    <div class="page-loader__accent" aria-hidden="true"></div>
+    <div class="page-loader__inner">
+      <p class="page-loader__kicker text-label-01" id="page-loader-kicker">Product Designer · Rapid Prototyper</p>
+      <p class="page-loader__title">
+        <span class="page-loader__line"><span>Jiayi's</span></span>
+        <span class="page-loader__line"><span class="text-gradient-blue">Case Study</span></span>
+      </p>
+      <div class="page-loader__bar" aria-hidden="true">
+        <span class="page-loader__bar-fill"></span>
+      </div>
+    </div>
+    <div class="page-loader__meta">
+      <span class="page-loader__index" aria-hidden="true">01</span>
+      <span class="page-loader__status" id="page-loader-status">加载中</span>
+      <span class="page-loader__loop" id="page-loader-loop">从 Demo 到交付</span>
+    </div>
+  </div>
   <header class="site-header" id="top">
     <nav class="site-header__nav" aria-label="Site header">
       <button type="button" class="site-header__menu" id="site-nav-open" aria-label="Open navigation" aria-controls="page-navigation">
@@ -35,10 +83,20 @@
         <img class="site-header__avatar" src="assets/images/header-avatar.png" alt="" width="28" height="28" decoding="async" />
         <span data-field="meta.name">Jiayi's Case Study</span>
       </a>
-      <div class="site-header__lang" role="group" aria-label="Language">
-        <button type="button" class="site-header__lang-btn site-header__lang-btn--active" id="lang-zh" aria-pressed="true">中文</button>
-        <span class="site-header__lang-divider" aria-hidden="true">/</span>
-        <button type="button" class="site-header__lang-btn" id="lang-en" aria-pressed="false">EN</button>
+      <div class="site-header__tools">
+        <button type="button" class="site-header__theme" id="theme-toggle" aria-label="切换到深色模式">
+          <svg class="theme-icon theme-icon--asleep" focusable="false" width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194 11.113 11.113 0 0 1-7.974 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1 1 0 0 0-.175.016 13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555 1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38 1.015 1.015 0 0 0 14.98 3z"></path>
+          </svg>
+          <svg class="theme-icon theme-icon--light" focusable="false" width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M16 12.005a4 4 0 1 1-4 4 4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6 6 6 0 0 0-6-6zM5.394 6.813 6.81 5.4 8.93 7.525 7.515 8.94 5.394 6.813zM2 15.005h3v2H2zM5.394 25.197 7.515 23.07 8.93 24.485 6.81 26.61 5.394 25.197zM15 25.005h2v3h-2zM21.07 24.485 22.485 23.07 24.606 25.197 23.19 26.61 21.07 24.485zM27 15.005h3v2h-3zM21.07 7.525 23.19 5.4 24.606 6.813 22.485 8.94 21.07 7.525zM15 2.005h2v3h-2z"></path>
+          </svg>
+        </button>
+        <div class="site-header__lang" role="group" aria-label="Language">
+          <button type="button" class="site-header__lang-btn site-header__lang-btn--active" id="lang-zh" aria-pressed="true">中文</button>
+          <span class="site-header__lang-divider" aria-hidden="true">/</span>
+          <button type="button" class="site-header__lang-btn" id="lang-en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -75,11 +133,6 @@
         <!-- Statistics — bg #e9e9e9, border-top, Carbon grid -->
         <section class="page-section-wrapper page-section-wrapper--stats" aria-label="Statistics">
           <ul class="stats-list cds-grid" id="stats-grid"></ul>
-          <div class="stats-cat-track" aria-hidden="true">
-            <div class="stats-cat__walker">
-              <img class="stats-cat__sprite" src="assets/images/walking-cat.png" alt="" width="48" height="48" decoding="async">
-            </div>
-          </div>
         </section>
       </div>
     </div>
@@ -98,6 +151,17 @@
           </div>
         </div>
         <div class="col-span-16" id="skill-pipeline"></div>
+      </div>
+    </section>
+
+    <!-- Experience timeline -->
+    <section class="page-section-wrapper page-section-wrapper--white page-section-wrapper--pt page-section-wrapper--pb"
+             id="experience" hidden aria-labelledby="experience-title">
+      <div class="cds-grid">
+        <div class="section-header col-span-16">
+          <h2 class="section-header__title text-heading-05" id="experience-title">经历</h2>
+        </div>
+        <div class="col-span-16" id="experience-timeline"></div>
       </div>
     </section>
 

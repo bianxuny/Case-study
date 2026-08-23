@@ -47,8 +47,7 @@ Jiayi Portfolio/
 │   ├── timeline.js            # 时间轴
 │   ├── page-navigation.js     # 导航
 │   ├── sidebar-about.js       # 关于
-│   ├── card-preview.js        # 悬停预览
-│   └── stats-cat.js           # 统计栏动效
+│   └── card-preview.js        # 悬停预览
 └── assets/
     ├── images/
     ├── videos/

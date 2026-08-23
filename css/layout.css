@@ -167,16 +167,56 @@ main {
     box-sizing: border-box;
   }
 
-  .site-header__lang {
+  .site-header__tools {
     padding-right: var(--cds-grid-gutter);
   }
+}
+
+.site-header__tools {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.site-header__theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--cds-text-primary);
+  flex-shrink: 0;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.site-header__theme:hover {
+  background: var(--cds-layer-hover-01);
+}
+
+.site-header__theme:focus-visible {
+  outline: 2px solid var(--cds-link-primary);
+  outline-offset: -2px;
+}
+
+.site-header__theme .theme-icon--light {
+  display: none;
+}
+
+[data-theme="dark"] .site-header__theme .theme-icon--asleep {
+  display: none;
+}
+
+[data-theme="dark"] .site-header__theme .theme-icon--light {
+  display: block;
 }
 
 .site-header__lang {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  margin-left: auto;
   flex-shrink: 0;
 }
 
@@ -399,63 +439,6 @@ main {
   max-width: 15rem;
 }
 
-/* ── Stats walking cat ── */
-
-.stats-cat-track {
-  position: relative;
-  height: 3rem;
-  border-top: 1px solid var(--cds-border-subtle-00);
-}
-
-.stats-cat__walker {
-  position: absolute;
-  bottom: 0.25rem;
-  left: 0;
-  width: 3rem;
-  will-change: left;
-}
-
-.stats-cat__walker--sit {
-  transform: translateY(2px);
-}
-
-.stats-cat__walker--curious {
-  animation: stats-cat-curious 1.2s ease-in-out infinite;
-}
-
-@keyframes stats-cat-curious {
-  0%, 100% { transform: translateY(-1px); }
-  50% { transform: translateY(-3px); }
-}
-
-.stats-cat__sprite {
-  display: block;
-  width: 3rem;
-  height: auto;
-  image-rendering: pixelated;
-  transform-origin: center bottom;
-}
-
-.stats-cat__sprite--walking {
-  animation: stats-cat-bob 0.55s steps(2) infinite;
-}
-
-@keyframes stats-cat-bob {
-  0%, 100% { margin-top: 0; }
-  50% { margin-top: -2px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stats-cat__sprite--walking {
-    animation: none;
-  }
-
-  .stats-cat__walker {
-    left: 50% !important;
-    transform: translateX(-50%);
-  }
-}
-
 /* ── About focus tags ── */
 
 .about-tags {
@@ -518,8 +501,8 @@ main {
 /* ── Footer (IBM dark) ── */
 
 .site-footer {
-  color: var(--cds-text-inverse);
-  background-color: #21272a;
+  color: var(--cds-footer-text);
+  background-color: var(--cds-footer-bg);
   padding: var(--space-10) var(--cds-grid-gutter);
 }
 
@@ -547,12 +530,12 @@ main {
 
 .site-footer__open {
   margin-bottom: var(--space-03);
-  color: #c6c6c6;
+  color: var(--cds-footer-muted);
 }
 
 .site-footer__copy {
   margin: 0;
-  color: #f4f4f4;
+  color: var(--cds-footer-text);
 }
 
 .site-footer__links {
@@ -562,7 +545,7 @@ main {
 }
 
 .site-footer__link {
-  color: #78a9ff;
+  color: var(--cds-footer-link);
   text-decoration: none;
 }
 
@@ -571,7 +554,7 @@ main {
 }
 
 .site-footer__link:focus-visible {
-  outline: 2px solid #78a9ff;
+  outline: 2px solid var(--cds-footer-link);
   outline-offset: 2px;
 }
 
