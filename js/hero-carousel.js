@@ -75,11 +75,11 @@ function buildSlide(slide, locale, index) {
 
   const alt = txt(slide.alt, locale) || '';
   const media = isVideoSlide(slide)
-    ? `<video src="${slide.src}"
-         muted loop playsinline preload="metadata"
+    ? `<video data-src="${slide.src}"
+         muted loop playsinline preload="none"
          aria-label="${escapeAttr(alt)}"></video>`
     : `<img src="${slide.src}" alt="${escapeAttr(alt)}"
-         loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async" />`;
+         loading="${index <= 1 ? 'eager' : 'lazy'}" decoding="async" />`;
 
   return `
     <li class="hero-carousel__slide${activeClass}"
@@ -98,6 +98,9 @@ function syncSlideMedia(activeIndex) {
 
     const index = Number(slide.dataset.index);
     if (index === activeIndex) {
+      if (video.dataset.src && !video.getAttribute('src')) {
+        video.src = video.dataset.src;
+      }
       video.play().catch(() => {});
     } else {
       video.pause();

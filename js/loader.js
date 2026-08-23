@@ -1,4 +1,3 @@
-import { getItemPreviewSrc } from './card-preview.js';
 import { txt } from './i18n.js';
 import { UI } from './ui-strings.js';
 
@@ -86,25 +85,8 @@ export function warmupPortfolioMedia(data) {
   for (const slide of data.heroCarousel?.slides || []) {
     if (slide.blank || !slide.src || VIDEO_RE.test(slide.src)) continue;
     heroSoon.push(slide.src);
-    if (heroSoon.length >= 2) break;
+    break;
   }
 
-  const medical = (data.items || [])
-    .filter((item) => item.section === 'medical')
-    .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
-
-  const firstCovers = medical
-    .slice(0, 4)
-    .map((item) => getItemPreviewSrc(item, ''))
-    .filter(Boolean);
-
-  prefetchImages([...heroSoon, ...firstCovers]);
-
-  const warmed = new Set([...heroSoon, ...firstCovers]);
-  const rest = (data.items || [])
-    .map((item) => getItemPreviewSrc(item, ''))
-    .filter((src) => src && !warmed.has(src) && !VIDEO_RE.test(src));
-
-  const idle = window.requestIdleCallback || ((cb) => window.setTimeout(cb, 600));
-  idle(() => prefetchImages(rest), { timeout: 2000 });
+  prefetchImages(heroSoon);
 }

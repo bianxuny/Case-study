@@ -31,23 +31,23 @@
     "slides": [
       { "blank": true },
       {
-        "src": "assets/images/hero-slide-1.jpg",
+        "src": "assets/images/hero-slide-1.webp",
         "alt": { "zh": "作品展示 1", "en": "Work showcase 1" }
       },
       {
-        "src": "assets/images/hero-slide-1.5.jpg",
+        "src": "assets/images/hero-slide-1.5.webp",
         "alt": { "zh": "作品展示 1.5", "en": "Work showcase 1.5" }
       },
       {
-        "src": "assets/images/hero-slide-2.jpg",
+        "src": "assets/images/hero-slide-2.webp",
         "alt": { "zh": "作品展示 2", "en": "Work showcase 2" }
       },
       {
-        "src": "assets/images/hero-slide-3.jpg",
+        "src": "assets/images/hero-slide-3.webp",
         "alt": { "zh": "作品展示 3", "en": "Work showcase 3" }
       },
       {
-        "src": "assets/images/hero-slide-4.jpg",
+        "src": "assets/images/hero-slide-4.webp",
         "alt": { "zh": "作品展示 4", "en": "Work showcase 4" }
       },
       {
@@ -61,15 +61,15 @@
         "alt": { "zh": "作品展示 6", "en": "Work showcase 6" }
       },
       {
-        "src": "assets/images/hero-slide-7.jpg",
+        "src": "assets/images/hero-slide-7.webp",
         "alt": { "zh": "作品展示 7", "en": "Work showcase 7" }
       },
       {
-        "src": "assets/images/hero-slide-8.jpg",
+        "src": "assets/images/hero-slide-8.webp",
         "alt": { "zh": "作品展示 8", "en": "Work showcase 8" }
       },
       {
-        "src": "assets/images/hero-slide-9.png",
+        "src": "assets/images/hero-slide-9.webp",
         "alt": { "zh": "作品展示 9", "en": "Work showcase 9" }
       }
     ]
@@ -339,9 +339,9 @@
       "id": "xtalpi-glovebox",
       "section": "medical",
       "featured": true,
-      "cover": "assets/images/xtalpi-glovebox.jpg",
+      "cover": "assets/images/xtalpi-glovebox.webp",
       "images": [
-        "assets/images/xtalpi-glovebox.jpg",
+        "assets/images/xtalpi-glovebox.webp",
         "assets/images/xtalpi-glovebox-2.jpg",
         "assets/images/xtalpi-glovebox-3.jpg"
       ],
@@ -461,8 +461,8 @@
     {
       "id": "xtalpi-neo-dispenser",
       "section": "medical",
-      "cover": "assets/images/neo-dispenser-0.jpg",
-      "src": "assets/images/neo-dispenser-0.jpg",
+      "cover": "assets/images/neo-dispenser-0.webp",
+      "src": "assets/images/neo-dispenser-0.webp",
       "title": { "zh": "Neo Dispenser · 灵动勺", "en": "Neo Dispenser · Smart Spoon" },
       "summary": {
         "zh": "负责加粉、加液实验设计与图形化软件操控台面设计，并组织设计评审和开发上线支持。",
@@ -521,9 +521,9 @@
       "id": "xtalpi-hivepi",
       "section": "medical",
       "confidential": true,
-      "cover": "assets/images/hivepi/cover.png",
+      "cover": "assets/images/hivepi/cover.webp",
       "images": [
-        "assets/images/hivepi/cover.png",
+        "assets/images/hivepi/cover.webp",
         "assets/images/hivepi/hero.png"
       ],
       "title": { "zh": "HivePi · 中央物料路由", "en": "HivePi · Central material routing" },
@@ -544,9 +544,9 @@
       "id": "xtalpi-autonomous-lab",
       "section": "medical",
       "confidential": true,
-      "cover": "assets/images/autonomous-lab/cover.png",
+      "cover": "assets/images/autonomous-lab/cover.webp",
       "images": [
-        "assets/images/autonomous-lab/cover.png"
+        "assets/images/autonomous-lab/cover.webp"
       ],
       "title": { "zh": "ALO · 自主实验室", "en": "ALO · Autonomous Lab" },
       "summary": {
@@ -565,9 +565,9 @@
     {
       "id": "siemens-health-longleg",
       "section": "medical",
-      "cover": "assets/images/auto-long-leg-collimation-1.png",
+      "cover": "assets/images/auto-long-leg-collimation-1.webp",
       "images": [
-        "assets/images/auto-long-leg-collimation-1.png",
+        "assets/images/auto-long-leg-collimation-1.webp",
         "assets/images/auto-long-leg-collimation-2.png",
         "assets/images/auto-long-leg-collimation-3.png",
         "assets/images/auto-long-leg-collimation-4.png",
@@ -607,9 +607,9 @@
     {
       "id": "siemens-health-pathway",
       "section": "medical",
-      "cover": "assets/images/clinical-in-hospital-pathway.jpg",
+      "cover": "assets/images/clinical-in-hospital-pathway.webp",
       "images": [
-        "assets/images/clinical-in-hospital-pathway.jpg",
+        "assets/images/clinical-in-hospital-pathway.webp",
         "assets/images/clinical-in-hospital-pathway-2.jpg",
         "assets/images/clinical-in-hospital-pathway-3.jpg"
       ],
@@ -643,9 +643,9 @@
       "id": "siemens-siepa",
       "section": "industrial",
       "featured": true,
-      "cover": "assets/images/hero-slide-3.jpg",
+      "cover": "assets/images/hero-slide-3.webp",
       "images": [
-        "assets/images/hero-slide-3.jpg",
+        "assets/images/hero-slide-3.webp",
         "assets/images/SiePA-2.jpg"
       ],
       "title": { "zh": "SiePA · 智能预测维护", "en": "SiePA · Predictive maintenance" },
@@ -745,9 +745,9 @@
     {
       "id": "siemens-mobile",
       "section": "industrial",
-      "cover": "assets/images/hero-slide-4.jpg",
+      "cover": "assets/images/hero-slide-4.webp",
       "images": [
-        "assets/images/hero-slide-4.jpg",
+        "assets/images/hero-slide-4.webp",
         "assets/images/siePA-mobile-1.jpg",
         "assets/images/siePA-mobile-2.jpg",
         "assets/images/siePA-mobile-3.jpg",
@@ -800,9 +800,9 @@
     {
       "id": "microcosm-thesis",
       "section": "demo",
-      "cover": "assets/images/MicroVision%20Slide%201.jpg",
+      "cover": "assets/images/MicroVision%20Slide%201.webp",
       "images": [
-        "assets/images/MicroVision%20Slide%201.jpg",
+        "assets/images/MicroVision%20Slide%201.webp",
         "assets/images/MicroVision%20Slide%202.jpg",
         "assets/images/MicroVision%20Slide%203.jpg",
         "assets/images/MicroVision%20Slide%204.jpg",
