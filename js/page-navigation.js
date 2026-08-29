@@ -15,21 +15,35 @@ const MENU_ICON = `
   </svg>
 `;
 
+export function isBlogPage() {
+  return document.body?.dataset?.page === 'blog';
+}
+
+function homeHref(id) {
+  return isBlogPage() ? `index.html#${id}` : `#${id}`;
+}
+
 /** @param {import('./i18n.js').Locale} locale */
 export function buildNavItems(locale) {
   return [
-    { id: 'overview', label: sidebarLabel('overview', locale) },
-    { id: 'skills', label: sidebarLabel('skills', locale) },
-    { id: 'experience', label: sidebarLabel('experience', locale) },
-    { id: 'about', label: sidebarLabel('about', locale) },
-    { id: 'writing', label: sidebarLabel('writing', locale) },
+    { id: 'overview', label: sidebarLabel('overview', locale), href: homeHref('overview') },
+    { id: 'skills', label: sidebarLabel('skills', locale), href: homeHref('skills') },
+    { id: 'experience', label: sidebarLabel('experience', locale), href: homeHref('experience') },
+    { id: 'about', label: sidebarLabel('about', locale), href: homeHref('about') },
+    { id: 'writing', label: sidebarLabel('writing', locale), href: 'blog.html' },
   ];
 }
 
 /** @param {import('./i18n.js').Locale} locale */
 export function buildNavStructure(locale) {
   return {
-    topLinks: [{ id: 'overview', label: sidebarLabel('overview', locale) }],
+    topLinks: [
+      {
+        id: 'overview',
+        label: sidebarLabel('overview', locale),
+        href: homeHref('overview'),
+      },
+    ],
   };
 }
 
@@ -47,8 +61,10 @@ export function renderPageNavigation(navItems, structure, about, locale) {
     .map(
       (item) => `
       <li class="page-navigation__list__item">
-        <a class="page-navigation__list__item__link${item.id === 'overview' ? ' page-navigation__list__item__link--selected' : ''}"
-           href="#${item.id}" data-nav-id="${item.id}">
+        <a class="page-navigation__list__item__link${
+          item.id === 'overview' && !isBlogPage() ? ' page-navigation__list__item__link--selected' : ''
+        }"
+           href="${item.href || homeHref(item.id)}" data-nav-id="${item.id}">
           ${item.label}
         </a>
       </li>`
@@ -59,17 +75,19 @@ export function renderPageNavigation(navItems, structure, about, locale) {
   const skillsLabel = sidebarLabel('skills', locale);
   const skillsLinkHtml = `
       <li class="page-navigation__list__item">
-        <a class="page-navigation__list__item__link" href="#skills" data-nav-id="skills">${skillsLabel}</a>
+        <a class="page-navigation__list__item__link" href="${homeHref('skills')}" data-nav-id="skills">${skillsLabel}</a>
       </li>`;
   const experienceLabel = sidebarLabel('experience', locale);
   const experienceLinkHtml = `
       <li class="page-navigation__list__item">
-        <a class="page-navigation__list__item__link" href="#experience" data-nav-id="experience">${experienceLabel}</a>
+        <a class="page-navigation__list__item__link" href="${homeHref('experience')}" data-nav-id="experience">${experienceLabel}</a>
       </li>`;
   const writingLabel = sidebarLabel('writing', locale);
   const writingLinkHtml = `
       <li class="page-navigation__list__item">
-        <a class="page-navigation__list__item__link" href="#writing" data-nav-id="writing">${writingLabel}</a>
+        <a class="page-navigation__list__item__link${
+          isBlogPage() ? ' page-navigation__list__item__link--selected' : ''
+        }" href="blog.html" data-nav-id="writing">${writingLabel}</a>
       </li>`;
 
   nav.className = 'page-navigation page-navigation--sidebar';
@@ -78,7 +96,7 @@ export function renderPageNavigation(navItems, structure, about, locale) {
     <div class="page-navigation__inner">
       <div class="page-navigation__header-item" id="page-nav-toggle" role="button" tabindex="0"
            aria-expanded="false" aria-controls="page-nav-list">
-        <span id="page-nav-current">${navItems[0].label}</span>
+        <span id="page-nav-current">${isBlogPage() ? writingLabel : navItems[0].label}</span>
         ${MENU_ICON}
       </div>
       <ul class="page-navigation__list" id="page-nav-list">
@@ -154,7 +172,16 @@ export function initPageNavigationHighlight(navItems) {
 
   const links = document.querySelectorAll('.page-navigation__list__item__link');
   const currentLabel = document.getElementById('page-nav-current');
-  const sections = navItems.map((item) => document.getElementById(item.id)).filter(Boolean);
+
+  if (isBlogPage()) {
+    const writing = navItems.find((n) => n.id === 'writing');
+    if (writing && currentLabel) currentLabel.textContent = writing.label;
+    return;
+  }
+
+  const sections = navItems
+    .map((item) => document.getElementById(item.id))
+    .filter(Boolean);
 
   sectionObserver = new IntersectionObserver(
     (entries) => {
@@ -163,7 +190,7 @@ export function initPageNavigationHighlight(navItems) {
 
         links.forEach((l) => l.classList.remove('page-navigation__list__item__link--selected'));
         document
-          .querySelector(`.page-navigation__list__item__link[href="#${entry.target.id}"]`)
+          .querySelector(`.page-navigation__list__item__link[data-nav-id="${entry.target.id}"]`)
           ?.classList.add('page-navigation__list__item__link--selected');
 
         const match = navItems.find((n) => n.id === entry.target.id);

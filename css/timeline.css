@@ -100,14 +100,6 @@
   background: var(--cds-timeline-education-node);
 }
 
-.experience-timeline__polarity {
-  margin-left: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.16px;
-  color: var(--cds-text-helper);
-}
-
 .experience-timeline__rail {
   position: relative;
   min-height: 3.35rem;
@@ -296,7 +288,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: min(13rem, 46%);
+  width: max-content;
   transform: translateX(-50%) translateY(calc(var(--stagger, 0) * -3rem));
   opacity: var(--weight, 1);
 }
@@ -334,7 +326,7 @@
 }
 
 .experience-timeline__org-name {
-  min-width: 0;
+  white-space: nowrap;
 }
 
 .experience-timeline__launch {
@@ -383,28 +375,6 @@
   padding-top: var(--space-03);
 }
 
-.experience-timeline__caption {
-  margin: var(--space-06) 0 0;
-}
-
-.experience-timeline__science {
-  margin: 0 0 var(--space-02);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.16px;
-  line-height: 1.4;
-  color: var(--cds-text-helper);
-}
-
-.experience-timeline__epigraph {
-  margin: 0;
-  max-width: 40rem;
-  font-size: 0.8125rem;
-  letter-spacing: 0.16px;
-  line-height: 1.5;
-  color: var(--cds-text-secondary);
-}
-
 .experience-timeline__tick {
   position: absolute;
   transform: translateX(-50%);
@@ -428,7 +398,7 @@
   }
 
   .experience-timeline__card {
-    width: 9.25rem;
+    width: max-content;
   }
 }
 

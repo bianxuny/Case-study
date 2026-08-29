@@ -35,6 +35,7 @@ import {
   closeBlogPanel,
   renderBlogSection,
 } from './blog.js';
+import { renderContactFooter, formatPhoneDisplay, phoneTelHref } from './contact-footer.js';
 
 /** @type {object|null} */
 let portfolioData = null;
@@ -251,6 +252,20 @@ function renderAbout(about, locale) {
     moreLink.hidden = !getDefaultBlogId();
   }
 
+  const contactEl = document.getElementById('about-contact');
+  if (contactEl) {
+    const email = about.email || '';
+    const phone = about.phone || '';
+    const items = [
+      email &&
+        `<li><a class="about-contact__link" href="mailto:${email}"><span class="about-contact__label text-label-01">${txt(UI.sidebarEmail, locale)}</span><span class="about-contact__value">${email}</span></a></li>`,
+      phone &&
+        `<li><a class="about-contact__link" href="${phoneTelHref(phone)}"><span class="about-contact__label text-label-01">${txt(UI.sidebarPhone, locale)}</span><span class="about-contact__value">${formatPhoneDisplay(phone)}</span></a></li>`,
+    ].filter(Boolean);
+    contactEl.hidden = !items.length;
+    contactEl.innerHTML = items.join('');
+  }
+
   const focus = document.getElementById('about-focus');
   if (focus && about.focus) {
     const list = about.focus[locale] || about.focus;
@@ -422,55 +437,6 @@ function buildCaseStudyHtml(item, locale) {
   if (!metaHtml && !problemHtml && !approachHtml && !impactHtml) return '';
 
   return `<div class="project-panel__case">${metaHtml}${problemHtml}${approachHtml}${impactHtml}</div>`;
-}
-
-/** @param {object} data @param {import('./i18n.js').Locale} locale */
-function renderContactFooter(data, locale) {
-  const openEl = document.getElementById('footer-open-to-work');
-  const linksEl = document.getElementById('footer-links');
-  if (!linksEl) return;
-
-  const openToWork = txt(data.contact?.openToWork, locale);
-  if (openEl) {
-    openEl.textContent = openToWork;
-    openEl.hidden = !openToWork;
-  }
-
-  const contact = data.contact || {};
-  const instagram = data.about?.instagram || '';
-  const links = [
-    contact.email && {
-      href: `mailto:${contact.email}`,
-      label: txt(UI.footerEmail, locale),
-      external: false,
-    },
-    contact.linkedin && {
-      href: contact.linkedin,
-      label: txt(UI.footerLinkedIn, locale),
-      external: true,
-    },
-    contact.resume && {
-      href: contact.resume,
-      label: txt(UI.footerResume, locale),
-      external: true,
-    },
-    instagram && {
-      href: instagram,
-      label: txt(UI.footerInstagram, locale),
-      external: true,
-    },
-  ].filter(Boolean);
-
-  linksEl.innerHTML = links.length
-    ? links
-        .map(
-          (link) => `
-        <a class="site-footer__link" href="${link.href}"${link.external ? ' target="_blank" rel="noopener noreferrer"' : ''}>
-          ${link.label}
-        </a>`
-        )
-        .join('')
-    : '';
 }
 
 /** @param {string} id */

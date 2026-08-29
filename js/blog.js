@@ -13,6 +13,15 @@ let defaultPostId = null;
 /** @type {object|null} */
 let blogMeta = null;
 
+export function isBlogPage() {
+  return document.body?.dataset?.page === 'blog';
+}
+
+/** @param {string} id */
+export function blogPostHref(id) {
+  return isBlogPage() ? `?id=${encodeURIComponent(id)}` : `blog.html?id=${encodeURIComponent(id)}`;
+}
+
 /**
  * @param {object|null} blog
  * @returns {string|null}
@@ -30,9 +39,20 @@ export function registerBlogPosts(blog) {
   return defaultPostId;
 }
 
+export function getBlogMeta() {
+  return blogMeta;
+}
+
+/** @param {string} id */
+export function getBlogPost(id) {
+  return postsById.get(id) || null;
+}
+
 /** @returns {object[]} */
-function getSectionPosts() {
-  return [...postsById.values()].filter((post) => post.listInSection !== false);
+export function getListedPosts() {
+  return [...postsById.values()]
+    .filter((post) => post.listInSection !== false)
+    .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
 }
 
 /** @returns {string|null} */
@@ -41,7 +61,7 @@ export function getDefaultBlogId() {
 }
 
 /** @param {string} date @param {import('./i18n.js').Locale} locale */
-function formatDate(date, locale) {
+export function formatBlogDate(date, locale) {
   if (!date) return '';
   const [y, m, d] = date.split('-').map(Number);
   if (!y || !m || !d) return date;
@@ -54,14 +74,22 @@ function formatDate(date, locale) {
 
 /** @param {string} value */
 function escapeAttr(value) {
-  return value
+  return String(value)
     .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;');
 }
 
+/** @param {object} post @param {import('./i18n.js').Locale} locale */
+export function formatBlogByline(post, locale) {
+  const dateText = txt(post.dateLabel, locale) || formatBlogDate(post.date, locale);
+  const author = txt(post.author, locale) || txt(blogMeta?.defaultAuthor, locale);
+  if (dateText && author) return `${dateText} · ${author}`;
+  return dateText || author;
+}
+
 /** @param {object[]} blocks @param {import('./i18n.js').Locale} locale */
-function renderContentBlocks(blocks, locale) {
+export function renderContentBlocks(blocks, locale) {
   if (!blocks?.length) return '';
   return blocks
     .map((block) => {
@@ -102,28 +130,42 @@ function renderContentBlocks(blocks, locale) {
     .join('');
 }
 
-/** @param {object} post @param {import('./i18n.js').Locale} locale */
-function renderBlogCard(post, locale) {
+/**
+ * @param {object} post
+ * @param {import('./i18n.js').Locale} locale
+ */
+export function renderCoverCard(post, locale) {
   const tags = post.tags?.[locale] || post.tags || [];
-  const tagsHtml = tags
-    .slice(0, 2)
+  const tagsHtml = (Array.isArray(tags) ? tags : [])
+    .slice(0, 3)
     .map((tag) => `<span class="blog-card__tag">${tag}</span>`)
     .join('');
-  const dateText = txt(post.dateLabel, locale) || formatDate(post.date, locale);
+  const title = txt(post.title, locale);
+  const byline = formatBlogByline(post, locale);
+  const href = blogPostHref(post.id);
+  const cover = post.cover
+    ? `<div class="blog-card__image-wrap"><img src="${escapeAttr(post.cover)}" alt="" loading="lazy" decoding="async" /></div>`
+    : `<div class="blog-card__image-wrap blog-card__image-wrap--empty" aria-hidden="true"></div>`;
 
   return `
-    <article class="blog-card" role="listitem" tabindex="0" data-blog-id="${escapeAttr(post.id)}">
+    <a class="blog-card blog-card--cover" role="listitem" href="${escapeAttr(href)}" aria-label="${escapeAttr(title)}">
+      ${cover}
       <div class="blog-card__body">
-        <div class="blog-card__meta">
-          ${dateText ? `<time class="blog-card__date text-label-01 text-text-helper" datetime="${post.date || ''}">${dateText}</time>` : ''}
-          ${tagsHtml ? `<div class="blog-card__tags">${tagsHtml}</div>` : ''}
-        </div>
-        <h3 class="blog-card__title text-heading-03">${txt(post.title, locale)}</h3>
-        <p class="blog-card__summary text-body-02 text-text-secondary">${txt(post.summary, locale)}</p>
-        <span class="blog-card__cta text-label-01">${txt(UI.blogReadMore, locale)}</span>
+        <h3 class="blog-card__title text-heading-03">${title}</h3>
+        ${byline ? `<p class="blog-card__byline text-label-01 text-text-helper">${byline}</p>` : ''}
+        ${tagsHtml ? `<div class="blog-card__tags">${tagsHtml}</div>` : ''}
       </div>
-    </article>`;
+    </a>`;
 }
+
+/** @param {object} post @param {string} topicId */
+export function postMatchesTopic(post, topicId) {
+  if (!topicId || topicId === 'all') return true;
+  const topics = post.topics || [];
+  return topics.includes(topicId);
+}
+
+const HOME_WINDOW_COUNT = 4;
 
 /** @param {object|null} blog @param {import('./i18n.js').Locale} locale */
 export function renderBlogSection(blog, locale) {
@@ -131,13 +173,18 @@ export function renderBlogSection(blog, locale) {
   const list = document.getElementById('blog-list');
   const title = document.getElementById('writing-title');
   const subtitle = document.getElementById('writing-subtitle');
+  const allLink = document.getElementById('blog-window-all');
   if (!section || !list) return;
 
-  const posts = getSectionPosts();
+  const posts = getListedPosts().slice(0, HOME_WINDOW_COUNT);
   const meta = blog?.meta ?? blogMeta;
 
   if (title) title.textContent = txt(meta?.title, locale) || txt(UI.blogTitle, locale);
   if (subtitle) subtitle.textContent = txt(meta?.subtitle, locale);
+  if (allLink) {
+    allLink.textContent = txt(UI.blogViewAll, locale);
+    allLink.hidden = !getListedPosts().length;
+  }
 
   if (!posts.length) {
     section.hidden = true;
@@ -146,7 +193,8 @@ export function renderBlogSection(blog, locale) {
   }
 
   section.hidden = false;
-  list.innerHTML = posts.map((post) => renderBlogCard(post, locale)).join('');
+  list.classList.add('blog-grid');
+  list.innerHTML = posts.map((post) => renderCoverCard(post, locale)).join('');
 }
 
 /** @param {string} id @param {import('./i18n.js').Locale} locale */
@@ -164,10 +212,12 @@ export function openBlogPanel(id, locale) {
   title.textContent = txt(post.title, locale);
 
   const tags = post.tags?.[locale] || post.tags || [];
-  const tagsHtml = tags.map((t) => `<span class="blog-panel__tag">${t}</span>`).join('');
-  const dateText = txt(post.dateLabel, locale) || formatDate(post.date, locale);
+  const tagsHtml = (Array.isArray(tags) ? tags : [])
+    .map((t) => `<span class="blog-panel__tag">${t}</span>`)
+    .join('');
+  const byline = formatBlogByline(post, locale);
   meta.innerHTML = `
-    <time class="blog-panel__date text-label-01 text-text-helper" datetime="${post.date || ''}">${dateText}</time>
+    ${byline ? `<p class="blog-panel__date text-label-01 text-text-helper">${byline}</p>` : ''}
     ${tagsHtml ? `<div class="blog-panel__tags">${tagsHtml}</div>` : ''}`;
 
   const blocks = post.content?.[locale] || post.content?.zh || [];
@@ -192,46 +242,20 @@ export function closeBlogPanel() {
   if (body) body.innerHTML = '';
 }
 
-/** @param {import('./i18n.js').Locale} locale */
-function openDefaultBlog(locale) {
-  if (defaultPostId) openBlogPanel(defaultPostId, locale);
-}
-
-/** @param {import('./i18n.js').Locale} locale */
-function openBlogFromCard(card, locale) {
-  const id = card?.dataset?.blogId;
-  if (id) openBlogPanel(id, locale);
-}
-
 export function initBlogPanel() {
   const panel = document.getElementById('blog-panel');
   const backdrop = document.getElementById('blog-panel-backdrop');
   const closeBtn = document.getElementById('blog-panel-close');
-  if (!panel) return;
 
   document.addEventListener('click', (e) => {
-    const card = e.target.closest('.blog-card');
-    if (card) {
-      const locale = document.documentElement.lang === 'en' ? 'en' : 'zh';
-      openBlogFromCard(card, locale);
-      return;
-    }
-
     const trigger = e.target.closest('.about-more-link');
     if (!trigger || !defaultPostId) return;
+    if (trigger.tagName === 'A' && trigger.getAttribute('href')) return;
     e.preventDefault();
-    const locale = document.documentElement.lang === 'en' ? 'en' : 'zh';
-    openDefaultBlog(locale);
+    window.location.href = blogPostHref(defaultPostId);
   });
 
-  document.addEventListener('keydown', (e) => {
-    const card = e.target.closest('.blog-card');
-    if (card && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault();
-      const locale = document.documentElement.lang === 'en' ? 'en' : 'zh';
-      openBlogFromCard(card, locale);
-    }
-  });
+  if (!panel) return;
 
   closeBtn?.addEventListener('click', closeBlogPanel);
   backdrop?.addEventListener('click', closeBlogPanel);

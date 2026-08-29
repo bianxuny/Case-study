@@ -29,9 +29,9 @@ export function txt(value, locale) {
 export const SIDEBAR = {
   overview: { zh: '概览', en: 'Overview' },
   experience: { zh: '经历', en: 'Experience' },
-  skills: { zh: '我的用户旅程', en: 'My Journey' },
+  skills: { zh: '我的用户旅程', en: 'Journey' },
   about: { zh: '关于', en: 'About' },
-  writing: { zh: '写作', en: 'Writing' },
+  writing: { zh: 'Blog', en: 'Blog' },
 };
 
 /** @param {keyof typeof SIDEBAR} key @param {Locale} locale */

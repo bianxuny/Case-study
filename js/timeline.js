@@ -301,7 +301,7 @@ function renderLabelCard(entry, locale) {
   return `
     <li class="experience-timeline__card experience-timeline__card--${entry.kind}"
         style="left:${(entry.x / VB_W) * 100}%; --stagger:${entry.stagger}; --weight:${entry.weight}"
-        role="listitem">
+             role="listitem">
       <p class="experience-timeline__period">${entry.period}</p>
       <p class="experience-timeline__org">
         <span class="experience-timeline__org-name">${entry.org}</span>${link}
@@ -631,8 +631,8 @@ export function renderExperienceTimeline(timeline, locale) {
     <figure class="experience-timeline experience-timeline--helix">
       <div class="experience-timeline__toolbar">
         <div class="experience-timeline__legend" aria-hidden="true">
-          <span class="experience-timeline__legend-item experience-timeline__legend-item--work">${workLabel}<span class="experience-timeline__polarity">5′ → 3′</span></span>
-          <span class="experience-timeline__legend-item experience-timeline__legend-item--education">${eduLabel}<span class="experience-timeline__polarity">3′ → 5′</span></span>
+          <span class="experience-timeline__legend-item experience-timeline__legend-item--work">${workLabel}</span>
+          <span class="experience-timeline__legend-item experience-timeline__legend-item--education">${eduLabel}</span>
         </div>
         <div class="experience-timeline__actions">
           ${labelsBtn}
@@ -648,10 +648,6 @@ export function renderExperienceTimeline(timeline, locale) {
       </div>
       <ol class="experience-timeline__rail experience-timeline__rail--education" style="--stagger-max:${eduStaggerMax}" role="list">${eduCards}</ol>
       <div class="experience-timeline__axis" aria-hidden="true">${years}</div>
-      <figcaption class="experience-timeline__caption">
-        <p class="experience-timeline__science">${txt(UI.helixScience, locale)}</p>
-        <p class="experience-timeline__epigraph">${txt(UI.helixEpigraph, locale)}</p>
-      </figcaption>
     </figure>`;
 }
 

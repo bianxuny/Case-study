@@ -1,5 +1,6 @@
 import { sidebarLabel, txt } from './i18n.js';
 import { UI } from './ui-strings.js';
+import { formatPhoneDisplay, phoneTelHref } from './contact-footer.js';
 
 /** IBM Carbon — logo--instagram */
 const INSTAGRAM_ICON = `
@@ -10,12 +11,26 @@ const INSTAGRAM_ICON = `
     <circle cx="22.406" cy="9.594" r="1.44"></circle>
   </svg>`;
 
+/** IBM Carbon — logo--linkedin */
+const LINKEDIN_ICON = `
+  <svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor"
+    width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M26.21 4H5.79A1.8 1.8 0 0 0 4 5.79V26.2a1.8 1.8 0 0 0 1.79 1.79H26.2A1.8 1.8 0 0 0 28 26.21V5.79A1.8 1.8 0 0 0 26.21 4zM11.11 24.41H7.59V13h3.52zm-1.76-13a2.04 2.04 0 1 1 0-4.08 2.04 2.04 0 0 1 0 4.08zM24.41 24.41h-3.51v-5.55c0-1.32 0-3-1.84-3s-2.12 1.44-2.12 2.92v5.63h-3.52V13h3.37v1.56h.05a3.7 3.7 0 0 1 3.33-1.84c3.57 0 4.22 2.35 4.22 5.39z"></path>
+  </svg>`;
+
 /** @param {string} value */
 function escapeAttr(value) {
   return value
     .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;');
+}
+
+/** @param {string} text @param {string} name */
+function highlightName(text, name) {
+  if (!text || !name || !text.includes(name)) return text;
+  const mark = `<span class="text-gradient-blue sidebar-about__name">${name}</span>`;
+  return text.split(name).join(mark);
 }
 
 /**
@@ -29,31 +44,58 @@ export function renderSidebarAboutHtml(about, locale) {
   const label = sidebarLabel('about', locale);
   const imageSrc = about.sidebarImage || 'assets/images/about.png';
   const imageAlt = txt(about.sidebarImageAlt, locale) || txt({ zh: '钱加义', en: 'Jiayi Qian' }, locale);
+  const name = txt(about.sidebarName, locale) || 'Jiayi';
+  const greeting = highlightName(txt(about.sidebarGreeting, locale), name);
   const summary = txt(about.sidebarSummary, locale);
   const moreLabel = txt(UI.sidebarMoreAbout, locale);
   const instagramLabel = txt(UI.sidebarInstagram, locale);
+  const linkedinLabel = txt(UI.sidebarLinkedIn, locale);
   const instagramUrl = about.instagram || '';
+  const linkedinUrl = about.linkedin || '';
 
-  const instagramHtml = instagramUrl
-    ? `<a class="sidebar-about__social" href="${escapeAttr(instagramUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(instagramLabel)}">${INSTAGRAM_ICON}</a>`
+  const socials = [
+    instagramUrl &&
+      `<a class="sidebar-about__social" href="${escapeAttr(instagramUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(instagramLabel)}">${INSTAGRAM_ICON}</a>`,
+    linkedinUrl &&
+      `<a class="sidebar-about__social" href="${escapeAttr(linkedinUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttr(linkedinLabel)}">${LINKEDIN_ICON}</a>`,
+  ]
+    .filter(Boolean)
+    .join('');
+
+  const socialsHtml = socials ? `<div class="sidebar-about__socials">${socials}</div>` : '';
+
+  const email = about.email || '';
+  const phone = about.phone || '';
+  const contactItems = [
+    email &&
+      `<a class="sidebar-about__contact-link" href="mailto:${escapeAttr(email)}">${escapeAttr(email)}</a>`,
+    phone &&
+      `<a class="sidebar-about__contact-link" href="${escapeAttr(phoneTelHref(phone))}">${escapeAttr(formatPhoneDisplay(phone))}</a>`,
+  ].filter(Boolean);
+  const contactHtml = contactItems.length
+    ? `<div class="sidebar-about__contact">${contactItems.join('')}</div>`
     : '';
+
+  const collapsed = document.body?.dataset?.page === 'blog';
 
   return `
     <li class="page-navigation__section page-navigation__section--about">
-      <button type="button" class="page-navigation__section-toggle" aria-expanded="true"
+      <button type="button" class="page-navigation__section-toggle" aria-expanded="${collapsed ? 'false' : 'true'}"
               aria-controls="sidebar-about">
         <span>${label}</span>
-        <svg class="page-navigation__chevron" focusable="false" preserveAspectRatio="xMidYMid meet"
+        <svg class="page-navigation__chevron${collapsed ? ' page-navigation__chevron--collapsed' : ''}" focusable="false" preserveAspectRatio="xMidYMid meet"
           fill="currentColor" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true">
           <path d="M16 10L26 20H6z"></path>
         </svg>
       </button>
-      <div class="sidebar-about page-navigation__sublist" id="sidebar-about" role="region"
+      <div class="sidebar-about page-navigation__sublist${collapsed ? ' page-navigation__sublist--collapsed' : ''}" id="sidebar-about" role="region"
            aria-label="${label}">
         <img class="sidebar-about__photo" src="${imageSrc}" alt="${imageAlt}" width="758" height="968"
              loading="lazy" decoding="async" />
+        ${greeting ? `<p class="sidebar-about__hello">${greeting}</p>` : ''}
         ${summary ? `<p class="sidebar-about__summary">${summary}</p>` : ''}
-        ${instagramHtml}
+        ${contactHtml}
+        ${socialsHtml}
         <button type="button" class="sidebar-about__link about-more-link">${moreLabel}</button>
       </div>
     </li>`;

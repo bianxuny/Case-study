@@ -16,8 +16,9 @@
     }
   },
   "contact": {
-    "email": "",
-    "linkedin": "",
+    "email": "bianxuny@gmail.com",
+    "phone": "15268353512",
+    "linkedin": "https://www.linkedin.com/in/jiayiqian/",
     "resume": "",
     "openToWork": {
       "zh": "开放 Product / UX 机会 · 2026",
@@ -116,7 +117,7 @@
         "start": "2022-12",
         "end": "2023-08",
         "icon": "🩻",
-        "org": { "zh": "西门子医疗（Shanghai Innovation Center）", "en": "Siemens Healthineers (Shanghai Innovation Center)" },
+        "org": { "zh": "西门子医疗（上海创新中心）", "en": "Siemens Healthineers (Shanghai Innovation Center)" },
         "title": { "zh": "产品设计师", "en": "Product Designer" },
         "url": "https://www.siemens-healthineers.cn/shanghai-innovation-center"
       },
@@ -283,11 +284,19 @@
   },
   "about": {
     "instagram": "https://www.instagram.com/jiayi_111111?igsh=MTZ1Zjc4OXRhNWptZA%3D%3D&utm_source=qr",
+    "linkedin": "https://www.linkedin.com/in/jiayiqian/",
+    "email": "bianxuny@gmail.com",
+    "phone": "15268353512",
     "sidebarImage": "assets/images/about.png",
     "sidebarImageAlt": { "zh": "钱加义", "en": "Jiayi Qian" },
+    "sidebarGreeting": {
+      "zh": "嗨，我是加义。",
+      "en": "Hi — It's Jiayi."
+    },
+    "sidebarName": { "zh": "加义", "en": "Jiayi" },
     "sidebarSummary": {
-      "zh": "产品经理与产品设计师，聚焦医疗、工业 B 端与实验室自动化。UAL 创意计算机硕士。从 SiePA 大屏到医疗 MVP、化合物数据管道——复杂系统，清晰可交付。",
-      "en": "Product manager and designer across healthcare, industrial B2B, and lab automation. MA Creative Computing at UAL. From SiePA dashboards to medical MVPs and compound data pipelines—complex systems made clear and shippable."
+      "zh": "产品经理与产品设计师，聚焦医疗、工业 B 端与实验室自动化。",
+      "en": "Product manager and designer across healthcare, industrial B2B, and lab automation."
     },
     "bio": {
       "zh": "不想被 PM、UX、UI、工业设计等标签框住。我更关注基于数据管道的建模与场景应用——在 AI 时代快速迭代，把经验沉淀为可复用的能力，并持续推进到可交付、可落地的结果。通过设计与创新，去解决或平衡复杂场景——在多重约束与诉求之间，寻找到可推进的路径与目标。",
@@ -816,6 +825,54 @@
       "tags": {
         "zh": ["Demo", "Agent", "UAL"],
         "en": ["Demo", "Agent", "UAL"]
+      }
+    },
+    {
+      "id": "0xpulse-heartrate",
+      "section": "demo",
+      "cover": "assets/images/hero-slide-8.webp",
+      "images": [
+        "assets/images/hero-slide-7.webp",
+        "assets/images/hero-slide-8.webp"
+      ],
+      "title": {
+        "zh": "0xPULSE · 心率传感",
+        "en": "0xPULSE · Heart-rate sensing"
+      },
+      "summary": {
+        "zh": "握住心率传感器，半空中的 3D 心脏随真实心跳搏动。UAL 交互装置，展出于 London Tech Week。",
+        "en": "Hold the heart-rate sensor and a mid-air 3D heart pulses with your real heartbeat. UAL installation, shown at London Tech Week."
+      },
+      "description": {
+        "zh": "「console.log(\"0xPULSE\")」是一件诗意交互装置。参与者握住心率传感器，半空中的 3D 心脏随真实心跳搏动；周围的数据流随之加速，闪烁的代码行里藏着关于技术如何改写人类未来的加密提示。Arduino 传感 + TouchDesigner 可视化，2025.4—2025.5 于 UAL Creative Computing Institute / London Tech Week 展出。",
+        "en": "console.log(\"0xPULSE\") is a poetic interactive installation. When a participant holds the heart-rate sensor, a 3D heart in mid-air pulses with their real heartbeat; surrounding data streams accelerate, and flickering lines of code carry encrypted hints about technologies that could reshape humanity. Arduino sensing + TouchDesigner visualization, shown at UAL Creative Computing Institute / London Tech Week, Apr–May 2025."
+      },
+      "highlights": [
+        {
+          "title": { "zh": "实时心率同步", "en": "Live heartbeat sync" },
+          "text": {
+            "zh": "参与者握住传感器，3D 心脏与数据流随真实心率加速——把不可见的生理信号变成可被共同观看的节律。",
+            "en": "Holding the sensor drives a 3D heart and data streams at the participant's real heart rate—turning an invisible signal into a shared rhythm."
+          }
+        },
+        {
+          "title": { "zh": "London Tech Week 展出", "en": "Shown at London Tech Week" },
+          "text": {
+            "zh": "2025.4—2025.5 作为 UAL Creative Computing Institute 作品在 London Tech Week 展出，现场验证传感、可视化与观众交互。",
+            "en": "Apr–May 2025: exhibited with UAL Creative Computing Institute at London Tech Week—validating sensing, visualization, and audience interaction on the floor."
+          }
+        },
+        {
+          "title": { "zh": "传感 × 可视化管线", "en": "Sensing × visualization pipeline" },
+          "text": {
+            "zh": "Arduino 采集心率，TouchDesigner 驱动粒子心脏与代码流——一条可演示的软硬件验证链路。",
+            "en": "Arduino captures heart rate; TouchDesigner drives the particle heart and code streams—a demonstrable hardware-to-visual pipeline."
+          }
+        }
+      ],
+      "tags": {
+        "zh": ["Demo", "装置", "Arduino", "UAL"],
+        "en": ["Demo", "Installation", "Arduino", "UAL"]
       }
     }
   ]

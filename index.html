@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Jiayi's Case Study — Product Designer · Rapid Prototyper。医疗 MVP、工业 B 端、实验室自动化。">
   <title>Jiayi's Case Study — Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/images/header-avatar.png">
+  <link rel="apple-touch-icon" href="assets/images/header-avatar.png">
   <script>
     (function () {
       try {
@@ -24,7 +26,7 @@
       z-index: 4000;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       background: #e9e9e9;
     }
     [data-theme="dark"] .page-loader { background: #262626; }
@@ -52,22 +54,20 @@
   <link rel="stylesheet" href="css/skill-pipeline.css">
 </head>
 <body>
-  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-busy="true">
+  <div class="page-loader" id="page-loader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="page-loader-status" aria-busy="true">
     <div class="page-loader__grid" aria-hidden="true"></div>
-    <div class="page-loader__accent" aria-hidden="true"></div>
-    <div class="page-loader__inner">
-      <p class="page-loader__kicker text-label-01" id="page-loader-kicker">Product Designer · Rapid Prototyper</p>
-      <p class="page-loader__title">
-        <span class="page-loader__line"><span>Jiayi's</span></span>
-        <span class="page-loader__line"><span class="text-gradient-blue">Case Study</span></span>
+    <div class="page-loader__stage">
+      <p class="page-loader__kicker text-label-01">
+        <span class="page-loader__kicker-work text-gradient-blue" id="page-loader-work">实践</span>
+        <span class="page-loader__times" aria-hidden="true">×</span>
+        <span class="page-loader__kicker-edu" id="page-loader-formation">养成</span>
       </p>
-      <div class="page-loader__bar" aria-hidden="true">
-        <span class="page-loader__bar-fill"></span>
-      </div>
+      <div class="page-loader__helix" id="page-loader-helix"></div>
+      <p class="page-loader__hello" id="page-loader-hello">嗨，我是<span class="text-gradient-blue page-loader__name">加义</span>。</p>
     </div>
     <div class="page-loader__meta">
-      <span class="page-loader__index" aria-hidden="true">01</span>
-      <span class="page-loader__status" id="page-loader-status">加载中</span>
+      <span class="page-loader__index" id="page-loader-pct">00</span>
+      <span class="page-loader__status" id="page-loader-status">配对中</span>
       <span class="page-loader__loop" id="page-loader-loop">从 Demo 到交付</span>
     </div>
   </div>
@@ -175,6 +175,7 @@
             <p class="content-description__copy text-body-02 text-text-secondary" data-about="bio"></p>
           </div>
         </div>
+        <ul class="about-contact col-span-16" id="about-contact" hidden></ul>
         <div class="col-span-16">
           <div class="masonry masonry--text" id="highlights-grid" role="list"></div>
         </div>
@@ -182,18 +183,21 @@
       </div>
     </section>
 
-    <!-- Writing / reflections -->
-    <section class="page-section-wrapper page-section-wrapper--secondary page-section-wrapper--pt page-section-wrapper--pb"
+    <!-- Blog window -->
+    <section class="page-section-wrapper page-section-wrapper--white page-section-wrapper--pt page-section-wrapper--pb"
              id="writing" hidden aria-labelledby="writing-title">
       <div class="cds-grid">
-        <div class="section-header col-span-16">
-          <h2 class="section-header__title text-heading-05" id="writing-title">写作</h2>
-          <div class="section-header__descriptions">
-            <p class="content-description__copy text-body-02 text-text-secondary" id="writing-subtitle"></p>
+        <div class="section-header section-header--split col-span-16">
+          <div>
+            <h2 class="section-header__title text-heading-05" id="writing-title">Blog</h2>
+            <div class="section-header__descriptions">
+              <p class="content-description__copy text-body-02 text-text-secondary" id="writing-subtitle"></p>
+            </div>
           </div>
+          <a class="blog-window__all text-label-01" id="blog-window-all" href="blog.html">全部文章</a>
         </div>
         <div class="col-span-16">
-          <div class="blog-list" id="blog-list" role="list"></div>
+          <div class="blog-grid" id="blog-list" role="list"></div>
         </div>
       </div>
     </section>
