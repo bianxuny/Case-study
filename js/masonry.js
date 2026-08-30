@@ -1,5 +1,5 @@
 import { txt } from './i18n.js';
-import { getItemPreviewSrc } from './card-preview.js';
+import { getItemCoverSrc, getItemPreviewSrc } from './card-preview.js';
 import { UI } from './ui-strings.js';
 import { carbonIconLocked } from './carbon-icons.js';
 
@@ -8,17 +8,22 @@ export function createPortfolioCard(item, locale, previewFallback = '') {
   const title = txt(item.title, locale);
   const cardDescription = txt(item.summary, locale) || txt(item.description, locale);
   const tags = item.tags?.[locale] || item.tags || [];
+  const coverSrc = getItemCoverSrc(item, previewFallback);
   const previewSrc = getItemPreviewSrc(item, previewFallback);
-  const hasCover = Boolean(previewSrc);
+  const hasCover = Boolean(coverSrc);
 
   const card = document.createElement('article');
+  const locked = Boolean(item.confidential);
   card.className = hasCover
     ? 'masonry__item content-card content-card--cover'
     : 'masonry__item content-card content-card--text';
+  if (locked) card.classList.add('content-card--static', 'content-card--confidential');
   card.dataset.id = item.id;
-  card.setAttribute('role', 'button');
-  card.setAttribute('tabindex', '0');
-  card.setAttribute('aria-label', title);
+  if (!locked) {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+  }
+  card.setAttribute('aria-label', locked ? `${title} · ${txt(UI.confidentialLabel, locale)}` : title);
 
   if (previewSrc) card.dataset.previewSrc = previewSrc;
 
@@ -33,7 +38,7 @@ export function createPortfolioCard(item, locale, previewFallback = '') {
       : '';
 
   const coverHtml = hasCover
-    ? `<div class="content-card__image-wrap">${cardBadge}<img src="${previewSrc}" alt="" loading="lazy" decoding="async" /></div>`
+    ? `<div class="content-card__image-wrap">${cardBadge}<img src="${coverSrc}" alt="" loading="lazy" decoding="async" /></div>`
     : '';
 
   card.innerHTML = `

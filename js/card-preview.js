@@ -1,10 +1,16 @@
 /** @param {object} item @param {string} [fallbackSrc] */
-export function getItemPreviewSrc(item, fallbackSrc = '') {
+export function getItemCoverSrc(item, fallbackSrc = '') {
   if (item.cover) return item.cover;
   if (item.images?.length) return item.images[0];
   if (item.poster) return item.poster;
   if (item.src && !/\.(mp4|webm|mov)(\?|$)/i.test(item.src)) return item.src;
   return fallbackSrc;
+}
+
+/** Hover rail image; falls back to the card cover. */
+export function getItemPreviewSrc(item, fallbackSrc = '') {
+  if (item.hover) return item.hover;
+  return getItemCoverSrc(item, fallbackSrc);
 }
 
 /** @param {object|undefined} heroCarousel */
@@ -23,9 +29,9 @@ export function getHeroFirstImageSrc(heroCarousel) {
 const PREVIEW_GAP = 12;
 const VIEWPORT_PADDING = 8;
 
-/** @param {HTMLElement} body */
-function positionPreview(body, rail) {
-  const rect = body.getBoundingClientRect();
+/** @param {HTMLElement} anchor */
+function positionPreview(anchor, rail) {
+  const rect = anchor.getBoundingClientRect();
   const railWidth = rail.offsetWidth;
   const railHeight = rail.offsetHeight;
   const headerOffset =
@@ -48,21 +54,21 @@ function positionPreview(body, rail) {
   rail.style.top = `${top}px`;
 }
 
-/** @param {HTMLElement} body @param {string} src @param {HTMLElement} rail @param {HTMLImageElement} img */
-function showPreview(body, src, rail, img) {
+/** @param {HTMLElement} anchor @param {string} src @param {HTMLElement} rail @param {HTMLImageElement} img */
+function showPreview(anchor, src, rail, img) {
   const srcChanged = rail.dataset.src !== src;
   if (srcChanged) {
     img.src = src;
     rail.dataset.src = src;
   }
-  img.alt = body.closest('.content-card')?.getAttribute('aria-label') || '';
+  img.alt = (anchor.closest('.content-card') || anchor).getAttribute('aria-label') || '';
   rail.hidden = false;
   rail.classList.add('card-preview-rail--visible');
-  positionPreview(body, rail);
+  positionPreview(anchor, rail);
 
   if (srcChanged && !img.complete) {
     img.onload = () => {
-      if (!rail.hidden && rail.dataset.src === src) positionPreview(body, rail);
+      if (!rail.hidden && rail.dataset.src === src) positionPreview(anchor, rail);
     };
   }
 }
@@ -91,7 +97,7 @@ export function initCardPreview(gallery) {
 
   const img = rail.querySelector('.card-preview-rail__img');
   /** @type {HTMLElement|null} */
-  let activeBody = null;
+  let activeCard = null;
 
   gallery.addEventListener('mouseover', (e) => {
     if (
@@ -101,46 +107,44 @@ export function initCardPreview(gallery) {
       return;
     }
 
-    const body = e.target.closest('.content-card:not(.content-card--static) .content-card__body');
-    if (!body) return;
-
-    const card = body.closest('.content-card');
+    const card = e.target.closest('.content-card');
     const src = card?.dataset.previewSrc;
     if (!src) {
-      if (activeBody) {
+      if (activeCard) {
         hidePreview(rail);
-        activeBody = null;
+        activeCard = null;
       }
       return;
     }
 
-    activeBody = body;
-    showPreview(body, src, rail, img);
+    if (activeCard === card && rail.dataset.src === src) return;
+    activeCard = card;
+    showPreview(card, src, rail, img);
   });
 
   gallery.addEventListener('mouseout', (e) => {
-    const body = e.target.closest('.content-card:not(.content-card--static) .content-card__body');
-    if (!body || body !== activeBody) return;
+    const card = e.target.closest('.content-card');
+    if (!card || card !== activeCard) return;
 
     const related = e.relatedTarget;
-    if (related instanceof Node && body.contains(related)) return;
-    if (related instanceof Element && related.closest('.content-card:not(.content-card--static) .content-card__body')) {
+    if (related instanceof Node && card.contains(related)) return;
+    if (related instanceof Element && related.closest('.content-card')?.dataset.previewSrc) {
       return;
     }
 
     hidePreview(rail);
-    activeBody = null;
+    activeCard = null;
   });
 
   window.addEventListener(
     'scroll',
     () => {
-      if (activeBody && !rail.hidden) positionPreview(activeBody, rail);
+      if (activeCard && !rail.hidden) positionPreview(activeCard, rail);
     },
     { passive: true }
   );
 
   window.addEventListener('resize', () => {
-    if (activeBody && !rail.hidden) positionPreview(activeBody, rail);
+    if (activeCard && !rail.hidden) positionPreview(activeCard, rail);
   });
 }

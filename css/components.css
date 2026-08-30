@@ -100,6 +100,14 @@
   background: var(--cds-layer-01);
 }
 
+.content-card--confidential {
+  cursor: default;
+}
+
+.content-card--cover.content-card--confidential:hover {
+  background: var(--cds-background);
+}
+
 .content-card--cover .content-card__image-wrap {
   position: relative;
   aspect-ratio: 16 / 10;

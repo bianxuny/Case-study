@@ -160,6 +160,28 @@ main {
   object-fit: cover;
 }
 
+.site-header__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-header__beta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 1.125rem;
+  padding: 0 var(--space-03);
+  color: var(--cds-text-on-color);
+  background-image: var(--cds-gradient-blue);
+  border-radius: 0;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 @media (min-width: 66rem) {
   .site-header__logo {
     flex: 0 0 var(--sidebar-width);

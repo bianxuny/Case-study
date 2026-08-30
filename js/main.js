@@ -385,6 +385,8 @@ function initProjectTriggers() {
     const trigger = e.target.closest('[data-open-project]');
     if (!trigger?.dataset.openProject) return;
     e.preventDefault();
+    const item = itemsById.get(trigger.dataset.openProject);
+    if (item?.confidential) return;
     openProjectPanel(trigger.dataset.openProject);
   });
 }
@@ -442,7 +444,7 @@ function buildCaseStudyHtml(item, locale) {
 /** @param {string} id */
 function openProjectPanel(id) {
   const item = itemsById.get(id);
-  if (!item) return;
+  if (!item || item.confidential) return;
 
   const panel = document.getElementById('project-panel');
   const title = document.getElementById('project-panel-title');

@@ -554,13 +554,14 @@
       "section": "medical",
       "confidential": true,
       "cover": "assets/images/autonomous-lab/cover.webp",
+      "hover": "assets/images/autonomous-lab/hover.png",
       "images": [
         "assets/images/autonomous-lab/cover.webp"
       ],
       "title": { "zh": "ALO · 自主实验室", "en": "ALO · Autonomous Lab" },
       "summary": {
-        "zh": "面向自动化实验室的数字引擎——通过 Agent 编排任务输入输出，并以 CLI 自动化执行命令与脚本，集中管理实验下发、调度与管控。",
-        "en": "A digital engine for automated labs—Agent orchestrates task I/O while CLI automates command and script execution, centrally managing experiment dispatch, scheduling, and control."
+        "zh": "面向自动化实验室的数字引擎概念，探索任务编排与执行闭环。（保密项目，内容有限展示）",
+        "en": "A digital engine concept for automated labs—exploring task orchestration and closed-loop execution. (Confidential—limited public detail.)"
       },
       "description": {
         "zh": "面向自动化实验室的数字引擎系统。通过工站数据管道接口统一接入各工站，以 Agent 驱动实验任务的输入输出与流程编排；底层依托 CLI 自动化执行命令与脚本，完成调度、管控与结果回传。构成从任务定义到执行闭环的整体数字底座。",
