@@ -30,7 +30,6 @@ export function buildNavItems(locale) {
     { id: 'skills', label: sidebarLabel('skills', locale), href: homeHref('skills') },
     { id: 'experience', label: sidebarLabel('experience', locale), href: homeHref('experience') },
     { id: 'about', label: sidebarLabel('about', locale), href: homeHref('about') },
-    { id: 'writing', label: sidebarLabel('writing', locale), href: 'blog.html' },
   ];
 }
 
@@ -82,21 +81,13 @@ export function renderPageNavigation(navItems, structure, about, locale) {
       <li class="page-navigation__list__item">
         <a class="page-navigation__list__item__link" href="${homeHref('experience')}" data-nav-id="experience">${experienceLabel}</a>
       </li>`;
-  const writingLabel = sidebarLabel('writing', locale);
-  const writingLinkHtml = `
-      <li class="page-navigation__list__item">
-        <a class="page-navigation__list__item__link${
-          isBlogPage() ? ' page-navigation__list__item__link--selected' : ''
-        }" href="blog.html" data-nav-id="writing">${writingLabel}</a>
-      </li>`;
-
   nav.className = 'page-navigation page-navigation--sidebar';
   nav.innerHTML = `
     <button type="button" class="page-navigation__backdrop" id="page-nav-backdrop" aria-label="Close menu"></button>
     <div class="page-navigation__inner">
       <div class="page-navigation__header-item" id="page-nav-toggle" role="button" tabindex="0"
            aria-expanded="false" aria-controls="page-nav-list">
-        <span id="page-nav-current">${isBlogPage() ? writingLabel : navItems[0].label}</span>
+        <span id="page-nav-current">${navItems[0].label}</span>
         ${MENU_ICON}
       </div>
       <ul class="page-navigation__list" id="page-nav-list">
@@ -104,7 +95,6 @@ export function renderPageNavigation(navItems, structure, about, locale) {
         ${skillsLinkHtml}
         ${experienceLinkHtml}
         ${aboutHtml}
-        ${writingLinkHtml}
       </ul>
     </div>
   `;
@@ -172,12 +162,6 @@ export function initPageNavigationHighlight(navItems) {
 
   const links = document.querySelectorAll('.page-navigation__list__item__link');
   const currentLabel = document.getElementById('page-nav-current');
-
-  if (isBlogPage()) {
-    const writing = navItems.find((n) => n.id === 'writing');
-    if (writing && currentLabel) currentLabel.textContent = writing.label;
-    return;
-  }
 
   const sections = navItems
     .map((item) => document.getElementById(item.id))

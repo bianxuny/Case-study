@@ -70,4 +70,6 @@ export const UI = {
   viewLiveProject: { zh: '查看在线演示', en: 'View live demo' },
   blogReadMore: { zh: '阅读全文', en: 'Read article' },
   blogEmpty: { zh: '暂无文章', en: 'No articles yet' },
+  blogClose: { zh: '关闭文章', en: 'Close article' },
+  blogPaneLabel: { zh: '文章详情', en: 'Article detail' },
 };

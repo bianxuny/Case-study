@@ -47,7 +47,6 @@ export function renderSidebarAboutHtml(about, locale) {
   const name = txt(about.sidebarName, locale) || 'Jiayi';
   const greeting = highlightName(txt(about.sidebarGreeting, locale), name);
   const summary = txt(about.sidebarSummary, locale);
-  const moreLabel = txt(UI.sidebarMoreAbout, locale);
   const instagramLabel = txt(UI.sidebarInstagram, locale);
   const linkedinLabel = txt(UI.sidebarLinkedIn, locale);
   const instagramUrl = about.instagram || '';
@@ -96,7 +95,6 @@ export function renderSidebarAboutHtml(about, locale) {
         ${summary ? `<p class="sidebar-about__summary">${summary}</p>` : ''}
         ${contactHtml}
         ${socialsHtml}
-        <button type="button" class="sidebar-about__link about-more-link">${moreLabel}</button>
       </div>
     </li>`;
 }

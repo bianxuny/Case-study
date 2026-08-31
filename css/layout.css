@@ -469,8 +469,7 @@ main {
   gap: var(--space-03) var(--space-09);
   list-style: none;
   margin: 0 0 var(--space-08);
-  padding: 0 0 var(--space-07);
-  border-bottom: 1px solid var(--cds-border-subtle-00);
+  padding: 0;
 }
 
 .about-contact[hidden] {

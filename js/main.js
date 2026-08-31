@@ -26,22 +26,10 @@ import {
   renderSkillPipeline,
   destroySkillPipeline,
 } from './skill-pipeline.js';
-import {
-  registerBlogPosts,
-  getDefaultBlogId,
-  initBlogPanel,
-  openBlogPanel,
-  getOpenBlogId,
-  closeBlogPanel,
-  renderBlogSection,
-} from './blog.js';
 import { renderContactFooter, formatPhoneDisplay, phoneTelHref } from './contact-footer.js';
 
 /** @type {object|null} */
 let portfolioData = null;
-
-/** @type {object|null} */
-let blogData = null;
 
 /** @type {import('./i18n.js').Locale} */
 let currentLocale = getLocale();
@@ -58,17 +46,13 @@ async function init() {
   updateLoaderCopy(currentLocale);
 
   try {
-    const [portfolio, blog] = await Promise.all([loadPortfolio(), loadBlog()]);
-    portfolioData = portfolio;
-    blogData = blog;
-    registerBlogPosts(blogData);
+    portfolioData = await loadPortfolio();
     renderSidebar(portfolioData, currentLocale);
     renderPageContent(portfolioData, currentLocale);
     initLangSwitcher();
     initThemeToggle();
     initProjectPanel();
     initProjectTriggers();
-    initBlogPanel();
 
     document.getElementById('site-nav-open')?.addEventListener('click', () => {
       document.getElementById('page-nav-toggle')?.click();
@@ -108,7 +92,6 @@ function renderPageContent(data, locale) {
   renderGallery(data.sections, data.items, locale, getHeroFirstImageSrc(data.heroCarousel));
   renderSkillPipeline(data.skillPipeline, locale);
   renderExperience(data.timeline, locale);
-  renderBlogSection(blogData, locale);
   renderContactFooter(data, locale);
   updateLangSwitcher(locale);
   updateThemeToggle(locale);
@@ -118,16 +101,6 @@ async function loadPortfolio() {
   const res = await fetch('data/portfolio.json');
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
-}
-
-async function loadBlog() {
-  try {
-    const res = await fetch('data/blog.json');
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
 }
 
 /** @param {object} meta @param {import('./i18n.js').Locale} locale */
@@ -238,20 +211,6 @@ function renderAbout(about, locale) {
   const bio = document.querySelector('[data-about="bio"]');
   if (bio) bio.textContent = txt(about.bio, locale);
 
-  const descriptions = document.querySelector('#about .section-header__descriptions');
-  let moreLink = document.getElementById('about-more-link');
-  if (!moreLink && descriptions) {
-    moreLink = document.createElement('button');
-    moreLink.type = 'button';
-    moreLink.id = 'about-more-link';
-    moreLink.className = 'about-more-link text-label-01';
-    descriptions.appendChild(moreLink);
-  }
-  if (moreLink) {
-    moreLink.textContent = txt(UI.sidebarMoreAbout, locale);
-    moreLink.hidden = !getDefaultBlogId();
-  }
-
   const contactEl = document.getElementById('about-contact');
   if (contactEl) {
     const email = about.email || '';
@@ -313,10 +272,6 @@ function switchLocale(locale) {
   renderSidebar(portfolioData, locale);
   renderPageContent(portfolioData, locale);
   if (openPanelId) openProjectPanel(openPanelId);
-  const openBlog = getOpenBlogId();
-  if (openBlog) openBlogPanel(openBlog, locale);
-  else closeBlogPanel();
-  renderBlogSection(blogData, locale);
 }
 
 /** @param {import('./i18n.js').Locale} locale */

@@ -4,3 +4,12 @@ node_modules/
 *.log
 .env
 .env.*
+exports/
+
+# Blog is local-only until it is ready to publish
+blog.html
+css/blog.css
+js/blog.js
+js/blog-page.js
+data/blog.json
+assets/images/blog/
